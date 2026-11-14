@@ -34,4 +34,64 @@
     <string name="home_overdue_title">Overdue tenants</string>
     <string name="home_no_overdue">No overdue rent. All clear!</string>
     <string name="home_days_overdue">%1$d days overdue</string>
+
+    <!-- Common fields -->
+    <string name="field_notes">Notes</string>
+    <string name="error_required">This field is required</string>
+    <string name="error_amount">Enter a valid amount</string>
+
+    <!-- Enum labels -->
+    <string name="unit_type_flat">Flat</string>
+    <string name="unit_type_shop">Shop</string>
+    <string name="unit_type_room">Room</string>
+    <string name="unit_type_house">House</string>
+    <string name="unit_type_office">Office</string>
+    <string name="unit_type_other">Other</string>
+    <string name="method_cash">Cash</string>
+    <string name="method_bank">Bank</string>
+    <string name="method_jazzcash">JazzCash</string>
+    <string name="method_easypaisa">Easypaisa</string>
+    <string name="method_deposit">From deposit</string>
+    <string name="method_other">Other</string>
+    <string name="bill_type_electricity">Bijli (Electricity)</string>
+    <string name="bill_type_gas">Gas</string>
+    <string name="bill_type_water">Water</string>
+    <string name="bill_type_other">Other</string>
+    <string name="split_equal">Split equally</string>
+    <string name="split_custom">Custom amounts</string>
+    <string name="expense_repair">Repair</string>
+    <string name="expense_maintenance">Maintenance</string>
+    <string name="expense_tax">Tax</string>
+    <string name="expense_utility">Utility</string>
+    <string name="expense_other">Other</string>
+    <string name="status_paid">Paid</string>
+    <string name="status_partial">Partial</string>
+    <string name="status_unpaid">Unpaid</string>
+
+    <!-- Properties -->
+    <string name="quick_properties">Properties</string>
+    <string name="properties_title">Properties</string>
+    <string name="properties_empty_title">No properties yet</string>
+    <string name="properties_empty_message">Add your building, house or market. Then add its flats, shops or rooms.</string>
+    <string name="property_add">Add property</string>
+    <string name="property_edit">Edit property</string>
+    <string name="property_delete">Delete property</string>
+    <string name="property_delete_message">This deletes the property, all its units, bills and expenses. Tenants stay but lose their unit. This cannot be undone.</string>
+    <string name="property_name">Property name</string>
+    <string name="property_address">Address</string>
+    <string name="units_count">%1$d units</string>
+    <string name="vacant_count">%1$d vacant</string>
+    <string name="units_summary">Units: %1$d (%2$d occupied, %3$d vacant)</string>
+    <string name="units_empty">No units yet. Tap Add unit to add a flat, shop or room.</string>
+    <string name="unit_add">Add unit</string>
+    <string name="unit_edit">Edit unit</string>
+    <string name="unit_delete">Delete unit</string>
+    <string name="unit_delete_message">Delete this unit? This cannot be undone.</string>
+    <string name="unit_delete_occupied_message">%1$s lives here. The tenant will stay but will have no unit. Delete anyway?</string>
+    <string name="unit_name">Unit name or number</string>
+    <string name="unit_name_hint">For example: Flat 2B, Shop 5, Room 1</string>
+    <string name="unit_type">Type</string>
+    <string name="unit_default_rent">Monthly rent (optional)</string>
+    <string name="unit_occupied">Occupied</string>
+    <string name="unit_vacant">Vacant</string>
 </resources>

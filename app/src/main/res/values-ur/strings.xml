@@ -273,4 +273,24 @@
     <string name="msg_due_unit">%1$s کا کرایہ %2$s (%3$s) واجب الادا ہے۔</string>
     <string name="msg_request">براہ کرم جلد از جلد ادا کر دیں۔</string>
     <string name="msg_thanks">شکریہ۔</string>
+
+    <!-- Expenses and profit -->
+    <string name="period_month">مہینہ</string>
+    <string name="period_year">سال</string>
+    <string name="expenses_title">اخراجات اور منافع</string>
+    <string name="expenses_list">اخراجات</string>
+    <string name="expenses_empty">اس مدت میں کوئی خرچ نہیں۔</string>
+    <string name="expense_add">خرچ شامل کریں</string>
+    <string name="expense_edit">خرچ میں ترمیم</string>
+    <string name="expense_delete">خرچ حذف کریں</string>
+    <string name="expense_delete_message">یہ خرچ حذف کریں؟</string>
+    <string name="expense_category">قسم</string>
+    <string name="expense_amount">رقم</string>
+    <string name="expense_date">تاریخ</string>
+    <string name="expense_note_hint">مثال: پلمبر، رنگ، پراپرٹی ٹیکس</string>
+    <string name="profit_net">منافع</string>
+    <string name="profit_income">آمدنی</string>
+    <string name="profit_expenses">اخراجات</string>
+    <string name="profit_by_property">جائیداد کے لحاظ سے</string>
+    <string name="profit_no_property">کوئی جائیداد نہیں</string>
 </resources>

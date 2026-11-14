@@ -10,6 +10,8 @@ import androidx.navigation.navArgument
 import com.kiraya.diary.R
 import com.kiraya.diary.ui.bills.BillEditScreen
 import com.kiraya.diary.ui.bills.BillsScreen
+import com.kiraya.diary.ui.expenses.ExpenseEditScreen
+import com.kiraya.diary.ui.expenses.ExpensesScreen
 import com.kiraya.diary.ui.home.HomeScreen
 import com.kiraya.diary.ui.home.QuickAction
 import com.kiraya.diary.ui.lease.LeaseEditScreen
@@ -60,6 +62,9 @@ fun KirayaNavHost(
                     },
                     QuickAction(R.string.reminders_title, R.drawable.ic_notification) {
                         navController.navigate(Routes.REMINDERS)
+                    },
+                    QuickAction(R.string.expenses_title, R.drawable.ic_expense) {
+                        navController.navigate(Routes.EXPENSES)
                     },
                     QuickAction(R.string.quick_add_tenant, R.drawable.ic_person) {
                         navController.navigate(Routes.tenantEdit())
@@ -167,6 +172,17 @@ fun KirayaNavHost(
                 onBack = back,
                 onTenantClick = { navController.navigate(Routes.tenantDetail(it)) },
             )
+        }
+        // Expenses
+        composable(Routes.EXPENSES) {
+            ExpensesScreen(
+                onBack = back,
+                onAdd = { navController.navigate(Routes.expenseEdit()) },
+                onOpen = { navController.navigate(Routes.expenseEdit(it)) },
+            )
+        }
+        composable(Routes.EXPENSE_EDIT, listOf(longArg(Routes.ARG_EXPENSE_ID, 0L))) {
+            ExpenseEditScreen(onDone = back)
         }
         composable(Routes.LEASE_EDIT, listOf(longArg(Routes.ARG_TENANT_ID))) {
             LeaseEditScreen(onDone = back)

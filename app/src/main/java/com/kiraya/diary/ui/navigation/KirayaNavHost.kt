@@ -8,6 +8,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.kiraya.diary.R
+import com.kiraya.diary.ui.backup.BackupScreen
 import com.kiraya.diary.ui.bills.BillEditScreen
 import com.kiraya.diary.ui.bills.BillsScreen
 import com.kiraya.diary.ui.expenses.ExpenseEditScreen
@@ -83,7 +84,13 @@ fun KirayaNavHost(
             )
         }
         composable(Routes.REPORTS) { ReportsScreen() }
-        composable(Routes.SETTINGS) { SettingsScreen() }
+        composable(Routes.SETTINGS) {
+            SettingsScreen(
+                onReminders = { navController.navigate(Routes.REMINDERS) },
+                onBackup = { navController.navigate(Routes.BACKUP) },
+            )
+        }
+        composable(Routes.BACKUP) { BackupScreen(onBack = back) }
 
         // Properties and units
         composable(Routes.PROPERTIES) {

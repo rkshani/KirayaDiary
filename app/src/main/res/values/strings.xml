@@ -330,4 +330,15 @@
     <string name="move_out_still_owed_hint">The tenant still owes money after the deposit. You can record a payment later from their page.</string>
     <string name="move_out_confirm">Confirm move out</string>
     <string name="move_out_confirm_message">Move out %1$s? Their unit will be marked vacant and no more rent will be added. History is kept.</string>
+
+    <!-- Backup -->
+    <string name="backup_title">Backup and restore</string>
+    <string name="backup_info">Save all data (tenants, rent, payments, bills, expenses, photos and settings) in one file on your phone, SD card or USB. No internet is used. Keep the file safe.</string>
+    <string name="backup_create">Create backup file</string>
+    <string name="backup_restore">Restore from backup</string>
+    <string name="backup_working">Please wait…</string>
+    <string name="backup_done">Backup saved.</string>
+    <string name="backup_failed">Something went wrong. Please try again.</string>
+    <string name="backup_invalid">This is not a Kiraya Diary backup file.</string>
+    <string name="backup_restore_message">Replace ALL current data with the backup from %1$s? The app will restart.</string>
 </resources>

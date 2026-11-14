@@ -273,4 +273,24 @@
     <string name="msg_due_unit">Rent for %1$s of %2$s is due for %3$s.</string>
     <string name="msg_request">Please pay at your earliest.</string>
     <string name="msg_thanks">Thank you.</string>
+
+    <!-- Expenses and profit -->
+    <string name="period_month">Month</string>
+    <string name="period_year">Year</string>
+    <string name="expenses_title">Expenses and profit</string>
+    <string name="expenses_list">Expenses</string>
+    <string name="expenses_empty">No expenses in this period.</string>
+    <string name="expense_add">Add expense</string>
+    <string name="expense_edit">Edit expense</string>
+    <string name="expense_delete">Delete expense</string>
+    <string name="expense_delete_message">Delete this expense?</string>
+    <string name="expense_category">Category</string>
+    <string name="expense_amount">Amount</string>
+    <string name="expense_date">Date</string>
+    <string name="expense_note_hint">For example: plumber, paint, property tax</string>
+    <string name="profit_net">Profit</string>
+    <string name="profit_income">Income</string>
+    <string name="profit_expenses">Expenses</string>
+    <string name="profit_by_property">By property</string>
+    <string name="profit_no_property">No property</string>
 </resources>

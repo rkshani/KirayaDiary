@@ -221,4 +221,20 @@
     <string name="bill_custom_total">Total: %1$s</string>
     <string name="bill_shares_error">Pick at least one tenant and enter valid amounts.</string>
     <string name="bill_split_between">Split between %1$d</string>
+
+    <!-- Receipts -->
+    <string name="receipt_title">Receipt</string>
+    <string name="receipt_heading">Rent Receipt</string>
+    <string name="receipt_number">Receipt no.</string>
+    <string name="receipt_date">Date</string>
+    <string name="receipt_received_from">Received from</string>
+    <string name="receipt_amount">Amount received</string>
+    <string name="receipt_balance">Balance after this payment</string>
+    <string name="receipt_advance">%1$s paid in advance</string>
+    <string name="receipt_clear">All dues clear</string>
+    <string name="receipt_signature">Signature</string>
+    <string name="receipt_footer">Made with Kiraya Diary</string>
+    <string name="receipt_whatsapp">WhatsApp</string>
+    <string name="receipt_share_title">Send receipt</string>
+    <string name="receipt_failed">Could not make the receipt.</string>
 </resources>

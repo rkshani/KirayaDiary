@@ -18,6 +18,7 @@ import com.kiraya.diary.ui.properties.PropertiesScreen
 import com.kiraya.diary.ui.properties.PropertyDetailScreen
 import com.kiraya.diary.ui.properties.PropertyEditScreen
 import com.kiraya.diary.ui.properties.UnitEditScreen
+import com.kiraya.diary.ui.receipts.ReceiptScreen
 import com.kiraya.diary.ui.rent.MonthlyRentScreen
 import com.kiraya.diary.ui.rent.RentEntryEditScreen
 import com.kiraya.diary.ui.reports.ReportsScreen
@@ -112,6 +113,7 @@ fun KirayaNavHost(
                     onOpenBill = { navController.navigate(Routes.billEdit(it)) },
                     onRecordPayment = { navController.navigate(Routes.paymentEdit(tenantId = it)) },
                     onEditPayment = { navController.navigate(Routes.paymentEdit(paymentId = it)) },
+                    onReceipt = { navController.navigate(Routes.receipt(it)) },
                 ),
             )
         }
@@ -127,8 +129,23 @@ fun KirayaNavHost(
         composable(
             Routes.PAYMENT_EDIT,
             listOf(longArg(Routes.ARG_TENANT_ID, 0L), longArg(Routes.ARG_PAYMENT_ID, 0L)),
-        ) {
-            PaymentEditScreen(onDone = { back() })
+        ) { entry ->
+            val isNew = (entry.arguments?.getLong(Routes.ARG_PAYMENT_ID) ?: 0L) == 0L
+            PaymentEditScreen(
+                onDone = { savedId ->
+                    // A new payment opens its receipt, ready to share.
+                    if (isNew && savedId != null) {
+                        navController.navigate(Routes.receipt(savedId)) {
+                            popUpTo(Routes.PAYMENT_EDIT) { inclusive = true }
+                        }
+                    } else {
+                        back()
+                    }
+                },
+            )
+        }
+        composable(Routes.RECEIPT, listOf(longArg(Routes.ARG_PAYMENT_ID))) {
+            ReceiptScreen(onBack = back)
         }
         // Bills
         composable(Routes.BILLS) {

@@ -293,4 +293,22 @@
     <string name="profit_expenses">Expenses</string>
     <string name="profit_by_property">By property</string>
     <string name="profit_no_property">No property</string>
+
+    <!-- Reports -->
+    <string name="report_title">Kiraya Diary report</string>
+    <string name="report_currency">Amounts in %1$s</string>
+    <string name="report_charged">Rent and bills due</string>
+    <string name="report_pending_total">Total pending now</string>
+    <string name="report_by_property">By property</string>
+    <string name="report_by_month">By month</string>
+    <string name="report_pending">Pending dues</string>
+    <string name="report_no_pending">Nobody owes anything. </string>
+    <string name="report_since">Since</string>
+    <string name="report_since_month">since %1$s</string>
+    <string name="report_export_pdf">PDF</string>
+    <string name="report_export_csv">CSV (Excel)</string>
+    <string name="report_share_title">Share report</string>
+    <string name="report_generated">Made on %1$s with Kiraya Diary</string>
+    <string name="report_property_line">Due %1$s · Collected %2$s · Expenses %3$s</string>
+    <string name="report_month_line">Due %1$s · Expenses %2$s</string>
 </resources>

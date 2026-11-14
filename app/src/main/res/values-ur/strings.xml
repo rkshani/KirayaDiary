@@ -293,4 +293,22 @@
     <string name="profit_expenses">اخراجات</string>
     <string name="profit_by_property">جائیداد کے لحاظ سے</string>
     <string name="profit_no_property">کوئی جائیداد نہیں</string>
+
+    <!-- Reports -->
+    <string name="report_title">کرایہ ڈائری رپورٹ</string>
+    <string name="report_currency">رقم %1$s میں</string>
+    <string name="report_charged">واجب کرایہ اور بل</string>
+    <string name="report_pending_total">ابھی کل باقی</string>
+    <string name="report_by_property">جائیداد کے لحاظ سے</string>
+    <string name="report_by_month">مہینے کے لحاظ سے</string>
+    <string name="report_pending">باقی واجبات</string>
+    <string name="report_no_pending">کسی کے ذمے کچھ باقی نہیں۔</string>
+    <string name="report_since">کب سے</string>
+    <string name="report_since_month">%1$s سے</string>
+    <string name="report_export_pdf">پی ڈی ایف</string>
+    <string name="report_export_csv">سی ایس وی (ایکسل)</string>
+    <string name="report_share_title">رپورٹ شیئر کریں</string>
+    <string name="report_generated">%1$s کو کرایہ ڈائری سے بنائی گئی</string>
+    <string name="report_property_line">واجب %1$s · وصول %2$s · خرچ %3$s</string>
+    <string name="report_month_line">واجب %1$s · خرچ %2$s</string>
 </resources>

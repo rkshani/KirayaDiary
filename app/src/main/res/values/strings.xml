@@ -237,4 +237,40 @@
     <string name="receipt_whatsapp">WhatsApp</string>
     <string name="receipt_share_title">Send receipt</string>
     <string name="receipt_failed">Could not make the receipt.</string>
+
+    <!-- Reminders -->
+    <string name="reminders_title">Reminders</string>
+    <string name="reminders_enable">Rent reminders</string>
+    <string name="reminders_enable_hint">A notification every morning for rent that is due or late, and for leases ending soon.</string>
+    <string name="reminders_allow">Allow notifications</string>
+    <string name="reminders_when">Remind me</string>
+    <string name="reminders_on_due_day">On due day</string>
+    <string name="reminders_days_before">%1$d days before</string>
+    <string name="reminders_lease_alert">Lease ending alert</string>
+    <string name="reminders_days">%1$d days</string>
+    <string name="reminders_message_language">Reminder message language</string>
+    <string name="reminders_test">Send notification now</string>
+    <string name="reminders_due_title">Rent due or late</string>
+    <string name="reminders_none_due">No rent is due right now.</string>
+    <string name="reminders_overdue_since">Late since %1$s</string>
+    <string name="reminders_leases_title">Leases ending soon</string>
+    <string name="reminders_no_leases">No leases ending soon.</string>
+    <string name="reminder_send_title">Send reminder</string>
+    <string name="reminder_sms">SMS</string>
+    <string name="language_english">English</string>
+    <string name="language_urdu">اردو</string>
+    <string name="channel_rent">Rent due</string>
+    <string name="channel_lease">Lease alerts</string>
+    <string name="notif_rent_text">Total due: %1$s</string>
+    <string name="notif_rent_text_overdue">Total due: %1$s · %2$d late</string>
+    <string name="notif_lease_text">Tap to see which leases are ending.</string>
+    <string name="notif_lease_line">%1$s: ends %2$s</string>
+    <string name="notif_lease_line_ended">%1$s: lease has ended</string>
+
+    <!-- Reminder message (sent to tenants) -->
+    <string name="msg_greeting">Assalam o Alaikum %1$s,</string>
+    <string name="msg_due">Your rent of %1$s is due for %2$s.</string>
+    <string name="msg_due_unit">Rent for %1$s of %2$s is due for %3$s.</string>
+    <string name="msg_request">Please pay at your earliest.</string>
+    <string name="msg_thanks">Thank you.</string>
 </resources>

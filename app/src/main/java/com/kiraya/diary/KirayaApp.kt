@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
 import com.kiraya.diary.core.coroutines.ApplicationScope
+import com.kiraya.diary.data.reminders.ReminderNotifier
 import com.kiraya.diary.data.work.WorkScheduler
 import com.kiraya.diary.domain.usecase.GenerateRentEntriesUseCase
 import dagger.hilt.android.HiltAndroidApp
@@ -19,6 +20,8 @@ class KirayaApp : Application(), Configuration.Provider {
 
     @Inject lateinit var generateRentEntries: GenerateRentEntriesUseCase
 
+    @Inject lateinit var reminderNotifier: ReminderNotifier
+
     @Inject @ApplicationScope
     lateinit var appScope: CoroutineScope
 
@@ -27,6 +30,7 @@ class KirayaApp : Application(), Configuration.Provider {
 
     override fun onCreate() {
         super.onCreate()
+        reminderNotifier.createChannels()
         workScheduler.scheduleAll()
         // Catch up right away so the new month's rent shows without waiting for the worker.
         appScope.launch { runCatching { generateRentEntries() } }

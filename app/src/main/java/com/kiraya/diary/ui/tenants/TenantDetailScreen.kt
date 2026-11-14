@@ -17,6 +17,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -39,6 +40,7 @@ import com.kiraya.diary.domain.model.TenantWithUnit
 import com.kiraya.diary.ui.components.ConfirmDialog
 import com.kiraya.diary.ui.lease.LeaseCard
 import com.kiraya.diary.ui.payments.PaymentsSection
+import com.kiraya.diary.ui.reminders.SendReminderDialog
 import com.kiraya.diary.ui.rent.ChargesSection
 import com.kiraya.diary.ui.components.KirayaTopBar
 import com.kiraya.diary.ui.components.LocalMoneyDisplay
@@ -70,6 +72,8 @@ fun TenantDetailScreen(
     val tenant = state.tenant
     var menuOpen by remember { mutableStateOf(false) }
     var confirmDelete by remember { mutableStateOf(false) }
+    var sendReminder by remember { mutableStateOf(false) }
+    val settings by viewModel.settings.collectAsStateWithLifecycle()
     val context = LocalContext.current
 
     Scaffold(
@@ -115,8 +119,17 @@ fun TenantDetailScreen(
             ),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            tenantSections(state, tenant, actions)
+            tenantSections(state, tenant, actions, onSendReminder = { sendReminder = true })
         }
+    }
+
+    if (sendReminder && tenant != null) {
+        SendReminderDialog(
+            phone = tenant.tenant.phone,
+            defaultLanguage = settings.messageLanguage,
+            buildMessage = viewModel::reminderMessage,
+            onDismiss = { sendReminder = false },
+        )
     }
 
     if (confirmDelete) {
@@ -134,8 +147,15 @@ private fun LazyListScope.tenantSections(
     state: TenantDetailState,
     tenant: TenantWithUnit,
     actions: TenantDetailActions,
+    onSendReminder: () -> Unit,
 ) {
-    item { BalanceCard(state, onRecordPayment = { actions.onRecordPayment(tenant.tenant.id) }) }
+    item {
+        BalanceCard(
+            state,
+            onRecordPayment = { actions.onRecordPayment(tenant.tenant.id) },
+            onSendReminder = onSendReminder,
+        )
+    }
     item { InfoCard(tenant) }
     item {
         ChargesSection(
@@ -167,7 +187,7 @@ private fun LazyListScope.tenantSections(
 }
 
 @Composable
-private fun BalanceCard(state: TenantDetailState, onRecordPayment: () -> Unit) {
+private fun BalanceCard(state: TenantDetailState, onRecordPayment: () -> Unit, onSendReminder: () -> Unit) {
     val ledger = state.ledger
     val tenant = state.tenant?.tenant ?: return
     ElevatedCard(
@@ -210,6 +230,12 @@ private fun BalanceCard(state: TenantDetailState, onRecordPayment: () -> Unit) {
             Button(onClick = onRecordPayment, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
                 Icon(painterResource(R.drawable.ic_payment), contentDescription = null)
                 Text(stringResource(R.string.payment_add), Modifier.padding(start = 8.dp))
+            }
+            if (ledger.pending > 0) {
+                OutlinedButton(onClick = onSendReminder, modifier = Modifier.fillMaxWidth().padding(top = 8.dp)) {
+                    Icon(painterResource(R.drawable.ic_message), contentDescription = null)
+                    Text(stringResource(R.string.reminder_send_title), Modifier.padding(start = 8.dp))
+                }
             }
         }
     }

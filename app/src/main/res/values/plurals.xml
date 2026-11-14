@@ -5,4 +5,12 @@
         <item quantity="one">%1$d new rent entry added</item>
         <item quantity="other">%1$d new rent entries added</item>
     </plurals>
+    <plurals name="notif_rent_title">
+        <item quantity="one">%1$d tenant has rent due</item>
+        <item quantity="other">%1$d tenants have rent due</item>
+    </plurals>
+    <plurals name="notif_lease_title">
+        <item quantity="one">%1$d lease is ending soon</item>
+        <item quantity="other">%1$d leases are ending soon</item>
+    </plurals>
 </resources>

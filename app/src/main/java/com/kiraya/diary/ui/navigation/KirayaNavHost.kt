@@ -15,6 +15,8 @@ import com.kiraya.diary.ui.properties.PropertiesScreen
 import com.kiraya.diary.ui.properties.PropertyDetailScreen
 import com.kiraya.diary.ui.properties.PropertyEditScreen
 import com.kiraya.diary.ui.properties.UnitEditScreen
+import com.kiraya.diary.ui.rent.MonthlyRentScreen
+import com.kiraya.diary.ui.rent.RentEntryEditScreen
 import com.kiraya.diary.ui.reports.ReportsScreen
 import com.kiraya.diary.ui.settings.SettingsScreen
 import com.kiraya.diary.ui.tenants.TenantDetailActions
@@ -42,6 +44,9 @@ fun KirayaNavHost(
             HomeScreen(
                 onTenantClick = { navController.navigate(Routes.tenantDetail(it)) },
                 quickActions = listOf(
+                    QuickAction(R.string.quick_monthly_rent, R.drawable.ic_calendar) {
+                        navController.navigate(Routes.MONTHLY_RENT)
+                    },
                     QuickAction(R.string.quick_add_tenant, R.drawable.ic_person) {
                         navController.navigate(Routes.tenantEdit())
                     },
@@ -94,8 +99,19 @@ fun KirayaNavHost(
                     onBack = back,
                     onEdit = { navController.navigate(Routes.tenantEdit(it)) },
                     onEditLease = { navController.navigate(Routes.leaseEdit(it)) },
+                    onEditRentEntry = { navController.navigate(Routes.rentEntryEdit(it)) },
+                    onOpenBill = { },
                 ),
             )
+        }
+        composable(Routes.MONTHLY_RENT) {
+            MonthlyRentScreen(
+                onBack = back,
+                onTenantClick = { navController.navigate(Routes.tenantDetail(it)) },
+            )
+        }
+        composable(Routes.RENT_ENTRY_EDIT, listOf(longArg(Routes.ARG_ENTRY_ID))) {
+            RentEntryEditScreen(onDone = back)
         }
         composable(Routes.LEASE_EDIT, listOf(longArg(Routes.ARG_TENANT_ID))) {
             LeaseEditScreen(onDone = back)

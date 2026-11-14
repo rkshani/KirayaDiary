@@ -37,6 +37,7 @@ import com.kiraya.diary.core.date.DateUtils
 import com.kiraya.diary.domain.model.TenantWithUnit
 import com.kiraya.diary.ui.components.ConfirmDialog
 import com.kiraya.diary.ui.lease.LeaseCard
+import com.kiraya.diary.ui.rent.ChargesSection
 import com.kiraya.diary.ui.components.KirayaTopBar
 import com.kiraya.diary.ui.components.LocalMoneyDisplay
 import com.kiraya.diary.ui.components.MoneyText
@@ -50,6 +51,8 @@ data class TenantDetailActions(
     val onBack: () -> Unit,
     val onEdit: (Long) -> Unit,
     val onEditLease: (Long) -> Unit,
+    val onEditRentEntry: (Long) -> Unit,
+    val onOpenBill: (Long) -> Unit,
 )
 
 @Composable
@@ -129,6 +132,13 @@ private fun LazyListScope.tenantSections(
 ) {
     item { BalanceCard(state) }
     item { InfoCard(tenant) }
+    item {
+        ChargesSection(
+            charges = state.ledger.charges,
+            onRentClick = actions.onEditRentEntry,
+            onBillClick = actions.onOpenBill,
+        )
+    }
     if (tenant.tenant.isActive || state.lease != null) {
         item { LeaseCard(state.lease, onEdit = { actions.onEditLease(tenant.tenant.id) }) }
     }

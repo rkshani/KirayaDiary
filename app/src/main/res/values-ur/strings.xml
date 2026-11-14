@@ -157,4 +157,26 @@
     <string name="lease_next_increase">اگلا اضافہ</string>
     <string name="lease_ended">معاہدہ ختم ہو گیا</string>
     <string name="lease_ends_in">%1$d دن میں ختم</string>
+
+    <!-- Monthly rent -->
+    <string name="quick_monthly_rent">ماہانہ کرایہ</string>
+    <string name="monthly_rent_title">ماہانہ کرایہ</string>
+    <string name="month_previous">پچھلا مہینہ</string>
+    <string name="month_next">اگلا مہینہ</string>
+    <string name="rent_generate_now">اس مہینے کا کرایہ ابھی بنائیں</string>
+    <string name="rent_month_empty">اس مہینے کا کوئی کرایہ نہیں۔</string>
+    <string name="rent_plus_bills">کرایہ %1$s + بل %2$s</string>
+    <string name="rent_entry_edit">مہینے کا کرایہ تبدیل کریں</string>
+    <string name="rent_entry_amount">اس مہینے کا کرایہ</string>
+    <string name="rent_entry_due_date">آخری تاریخ</string>
+    <string name="rent_entry_waive">یہ مہینہ معاف کریں</string>
+    <string name="rent_entry_waive_message">اس مہینے کا کرایہ صفر کر دیں؟ اگر کرایہ دار نے یہ مہینہ ادا نہیں کرنا تو یہ استعمال کریں۔</string>
+    <string name="charges_title">کرایہ اور بل</string>
+    <string name="charges_empty">ابھی کوئی کرایہ نہیں۔ کرایہ ہر مہینے کی پہلی تاریخ کو شامل ہوتا ہے۔</string>
+    <string name="charges_show_all">سب دکھائیں</string>
+    <string name="charges_show_less">کم دکھائیں</string>
+    <string name="charge_rent">کرایہ</string>
+    <string name="charge_bill">بل</string>
+    <string name="charge_paid_of">%2$s میں سے %1$s ادا</string>
+    <string name="charge_due_on">آخری تاریخ %1$s</string>
 </resources>

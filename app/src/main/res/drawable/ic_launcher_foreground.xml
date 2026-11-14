@@ -1,56 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Launcher icon art: a house that is also a spiral diary, with a door and a "paid" check badge.
-     Same design as drawable/ic_launcher_playstore.png. Content stays in the 66dp safe zone. -->
+     Same art as drawable/ic_launcher_playstore.png (that one also shows the app name).
+     No text here: the launcher already shows the app name under the icon.
+     Content stays in the 66dp safe zone. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="108dp"
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Chimney -->
+    <!-- Chimney + cap -->
     <path
         android:fillColor="#E8933A"
         android:pathData="M68.5,30 H71.5 A1.5,1.5 0 0 1 73,31.5 V44 H67 V31.5 A1.5,1.5 0 0 1 68.5,30 Z" />
-    <!-- Diary body -->
     <path
-        android:fillColor="#FFF6E6"
+        android:fillColor="#FFB95C"
+        android:pathData="M66.2,29.2 H73.8 V31.8 H66.2 Z" />
+    <!-- Diary page -->
+    <path
+        android:fillColor="#FFF8EC"
         android:pathData="M37,46 H71 A5,5 0 0 1 76,51 V79 A5,5 0 0 1 71,84 H37 A5,5 0 0 1 32,79 V51 A5,5 0 0 1 37,46 Z" />
     <!-- Diary spine -->
     <path
         android:fillColor="#FFE2B3"
         android:pathData="M37,46 H39 V84 H37 A5,5 0 0 1 32,79 V51 A5,5 0 0 1 37,46 Z" />
-    <!-- Roof (rounded corners) -->
+    <!-- Shade under the eaves -->
     <path
-        android:fillColor="#FFB95C"
+        android:fillColor="#F0DEC4"
+        android:pathData="M32,50 H76 V52.2 H32 Z" />
+    <!-- Roof (rounded corners, light at the top) -->
+    <path
         android:strokeColor="#FFB95C"
         android:strokeWidth="4"
         android:strokeLineJoin="round"
-        android:pathData="M54,24 L82,48 L26,48 Z" />
+        android:pathData="M54,24 L82,48 L26,48 Z">
+        <aapt:attr
+            name="android:fillColor"
+            xmlns:aapt="http://schemas.android.com/aapt">
+            <gradient
+                android:type="linear"
+                android:startX="54"
+                android:startY="22"
+                android:endX="54"
+                android:endY="50"
+                android:startColor="#FFCA78"
+                android:endColor="#FFB95C" />
+        </aapt:attr>
+    </path>
+    <!-- Eave line -->
+    <path
+        android:strokeColor="#E8933A"
+        android:strokeWidth="1.6"
+        android:strokeLineCap="round"
+        android:pathData="M29,48.6 H79" />
     <!-- Spiral rings -->
     <path
         android:strokeColor="#00463F"
         android:strokeWidth="3.2"
         android:strokeLineCap="round"
-        android:pathData="M30.1,54 H34.9 M30.1,62 H34.9 M30.1,70 H34.9 M30.1,78 H34.9" />
+        android:pathData="M30.1,55 H34.9 M30.1,62 H34.9 M30.1,69 H34.9 M30.1,76 H34.9" />
     <!-- Ruled lines -->
     <path
         android:strokeColor="#9FD3CB"
         android:strokeWidth="2.4"
         android:strokeLineCap="round"
-        android:pathData="M44,55 H69 M44,61 H62" />
-    <!-- Door -->
+        android:pathData="M44,57 H69 M44,63 H62" />
+    <!-- Door + knob -->
     <path
         android:fillColor="#006A60"
         android:pathData="M48,84 V74 A6,6 0 0 1 60,74 V84 Z" />
     <path
         android:fillColor="#FFB95C"
-        android:pathData="M56,77.5 A1.2,1.2 0 1 0 58.4,77.5 A1.2,1.2 0 1 0 56,77.5 Z" />
-    <!-- "Paid" check badge -->
+        android:pathData="M56,77.8 A1.2,1.2 0 1 0 58.4,77.8 A1.2,1.2 0 1 0 56,77.8 Z" />
+    <!-- "Paid" check badge with white ring -->
     <path
-        android:fillColor="#006A60"
+        android:fillColor="#FFFFFF"
         android:pathData="M62.5,78 A11.5,11.5 0 1 0 85.5,78 A11.5,11.5 0 1 0 62.5,78 Z" />
     <path
         android:fillColor="#FFB95C"
-        android:pathData="M65,78 A9,9 0 1 0 83,78 A9,9 0 1 0 65,78 Z" />
+        android:pathData="M64.7,78 A9.3,9.3 0 1 0 83.3,78 A9.3,9.3 0 1 0 64.7,78 Z" />
     <path
         android:strokeColor="#00463F"
         android:strokeWidth="2.8"

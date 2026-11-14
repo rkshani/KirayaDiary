@@ -8,6 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.kiraya.diary.R
+import com.kiraya.diary.ui.bills.BillEditScreen
+import com.kiraya.diary.ui.bills.BillsScreen
 import com.kiraya.diary.ui.home.HomeScreen
 import com.kiraya.diary.ui.home.QuickAction
 import com.kiraya.diary.ui.lease.LeaseEditScreen
@@ -50,6 +52,9 @@ fun KirayaNavHost(
                     },
                     QuickAction(R.string.quick_monthly_rent, R.drawable.ic_calendar) {
                         navController.navigate(Routes.MONTHLY_RENT)
+                    },
+                    QuickAction(R.string.quick_bills, R.drawable.ic_bill) {
+                        navController.navigate(Routes.BILLS)
                     },
                     QuickAction(R.string.quick_add_tenant, R.drawable.ic_person) {
                         navController.navigate(Routes.tenantEdit())
@@ -104,7 +109,7 @@ fun KirayaNavHost(
                     onEdit = { navController.navigate(Routes.tenantEdit(it)) },
                     onEditLease = { navController.navigate(Routes.leaseEdit(it)) },
                     onEditRentEntry = { navController.navigate(Routes.rentEntryEdit(it)) },
-                    onOpenBill = { },
+                    onOpenBill = { navController.navigate(Routes.billEdit(it)) },
                     onRecordPayment = { navController.navigate(Routes.paymentEdit(tenantId = it)) },
                     onEditPayment = { navController.navigate(Routes.paymentEdit(paymentId = it)) },
                 ),
@@ -124,6 +129,17 @@ fun KirayaNavHost(
             listOf(longArg(Routes.ARG_TENANT_ID, 0L), longArg(Routes.ARG_PAYMENT_ID, 0L)),
         ) {
             PaymentEditScreen(onDone = { back() })
+        }
+        // Bills
+        composable(Routes.BILLS) {
+            BillsScreen(
+                onBack = back,
+                onAdd = { navController.navigate(Routes.billEdit()) },
+                onOpen = { navController.navigate(Routes.billEdit(it)) },
+            )
+        }
+        composable(Routes.BILL_EDIT, listOf(longArg(Routes.ARG_BILL_ID, 0L))) {
+            BillEditScreen(onDone = back)
         }
         composable(Routes.LEASE_EDIT, listOf(longArg(Routes.ARG_TENANT_ID))) {
             LeaseEditScreen(onDone = back)

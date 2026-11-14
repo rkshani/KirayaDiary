@@ -198,4 +198,27 @@
     <string name="payment_note_hint">مثال: بینک یا جاز کیش ٹرانزیکشن آئی ڈی</string>
     <string name="payments_title">ادائیگیوں کی تاریخ</string>
     <string name="payments_empty">ابھی کوئی ادائیگی نہیں۔</string>
+
+    <!-- Bills -->
+    <string name="quick_bills">بل</string>
+    <string name="bills_title">بل</string>
+    <string name="bills_empty_title">ابھی کوئی بل نہیں</string>
+    <string name="bills_empty_message">بجلی، گیس یا پانی کا بل شامل کریں اور کرایہ داروں میں تقسیم کریں۔ ان کا حصہ ان کے واجبات میں شامل ہو جائے گا۔</string>
+    <string name="bill_add">بل شامل کریں</string>
+    <string name="bill_edit">بل میں ترمیم</string>
+    <string name="bill_delete">بل حذف کریں</string>
+    <string name="bill_delete_message">یہ بل حذف کریں؟ یہ ہر کرایہ دار کے واجبات سے ہٹ جائے گا۔</string>
+    <string name="bill_type">بل کی قسم</string>
+    <string name="bill_title_field">عنوان (اختیاری)</string>
+    <string name="bill_title_hint">مثال: مین میٹر، گراؤنڈ فلور</string>
+    <string name="bill_property">جائیداد</string>
+    <string name="bill_all_properties">تمام جائیدادیں</string>
+    <string name="bill_month">بل کا مہینہ</string>
+    <string name="bill_split">کیسے تقسیم کریں</string>
+    <string name="bill_total">بل کی کل رقم</string>
+    <string name="bill_who_pays">کون ادا کرے گا</string>
+    <string name="bill_no_tenants">تقسیم کے لیے کوئی موجودہ کرایہ دار نہیں۔</string>
+    <string name="bill_custom_total">کل: %1$s</string>
+    <string name="bill_shares_error">کم از کم ایک کرایہ دار چنیں اور درست رقم لکھیں۔</string>
+    <string name="bill_split_between">%1$d میں تقسیم</string>
 </resources>

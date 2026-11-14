@@ -162,6 +162,8 @@ class RentRepositoryImpl @Inject constructor(
 
     override suspend fun lastRentMonth(tenantId: Long) = rentEntryDao.lastMonth(tenantId)
 
+    override suspend fun deleteRentEntriesAfter(tenantId: Long, month: Int) = rentEntryDao.deleteAfter(tenantId, month)
+
     override fun observePayments(tenantId: Long) =
         paymentDao.observeByTenant(tenantId).map { rows -> rows.map { it.toDomain() } }
 

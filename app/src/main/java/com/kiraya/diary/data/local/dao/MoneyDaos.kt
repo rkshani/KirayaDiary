@@ -41,6 +41,9 @@ interface RentEntryDao {
 
     @Query("SELECT MAX(month) FROM rent_entries WHERE tenantId = :tenantId")
     suspend fun lastMonth(tenantId: Long): Int?
+
+    @Query("DELETE FROM rent_entries WHERE tenantId = :tenantId AND month > :month")
+    suspend fun deleteAfter(tenantId: Long, month: Int)
 }
 
 @Dao

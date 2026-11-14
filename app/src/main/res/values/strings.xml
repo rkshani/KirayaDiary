@@ -157,4 +157,26 @@
     <string name="lease_next_increase">Next increase</string>
     <string name="lease_ended">Lease ended</string>
     <string name="lease_ends_in">Ends in %1$d days</string>
+
+    <!-- Monthly rent -->
+    <string name="quick_monthly_rent">Monthly rent</string>
+    <string name="monthly_rent_title">Monthly rent</string>
+    <string name="month_previous">Previous month</string>
+    <string name="month_next">Next month</string>
+    <string name="rent_generate_now">Create this month\'s rent now</string>
+    <string name="rent_month_empty">No rent for this month.</string>
+    <string name="rent_plus_bills">Rent %1$s + bills %2$s</string>
+    <string name="rent_entry_edit">Edit month\'s rent</string>
+    <string name="rent_entry_amount">Rent for this month</string>
+    <string name="rent_entry_due_date">Due date</string>
+    <string name="rent_entry_waive">Waive this month</string>
+    <string name="rent_entry_waive_message">Set this month\'s rent to zero? Use this if the tenant does not have to pay for this month.</string>
+    <string name="charges_title">Rent and bills</string>
+    <string name="charges_empty">No rent yet. Rent is added on the first of each month.</string>
+    <string name="charges_show_all">Show all</string>
+    <string name="charges_show_less">Show less</string>
+    <string name="charge_rent">Rent</string>
+    <string name="charge_bill">Bill</string>
+    <string name="charge_paid_of">Paid %1$s of %2$s</string>
+    <string name="charge_due_on">Due %1$s</string>
 </resources>

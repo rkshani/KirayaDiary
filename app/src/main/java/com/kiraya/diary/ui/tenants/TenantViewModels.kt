@@ -15,6 +15,7 @@ import com.kiraya.diary.domain.model.TenantWithUnit
 import com.kiraya.diary.domain.model.UnitWithStatus
 import com.kiraya.diary.domain.repository.PropertyRepository
 import com.kiraya.diary.domain.repository.TenantRepository
+import com.kiraya.diary.domain.usecase.GenerateRentEntriesUseCase
 import com.kiraya.diary.domain.usecase.ObserveLedgersUseCase
 import com.kiraya.diary.domain.usecase.ObserveTenantLedgerUseCase
 import com.kiraya.diary.ui.navigation.Routes
@@ -155,6 +156,7 @@ class TenantEditViewModel @Inject constructor(
     private val tenantRepository: TenantRepository,
     propertyRepository: PropertyRepository,
     private val photoStorage: PhotoStorage,
+    private val generateRentEntries: GenerateRentEntriesUseCase,
     @ApplicationScope private val appScope: CoroutineScope,
 ) : ViewModel() {
     private val tenantId: Long = savedStateHandle[Routes.ARG_TENANT_ID] ?: 0L
@@ -263,6 +265,8 @@ class TenantEditViewModel @Inject constructor(
                 notes = f.notes,
             )
             val id = tenantRepository.saveTenant(tenant)
+            // Create rent entries from the start month so dues show right away.
+            if (tenant.isActive) generateRentEntries(id)
             original?.cnicPhoto?.let { old -> if (old != f.cnicPhoto) photoStorage.delete(old) }
             original = tenant.copy(id = id)
             _form.update { it.copy(saved = true, savedId = id) }

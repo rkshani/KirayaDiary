@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="rent_generated">
+        <item quantity="one">%1$d نیا کرایہ اندراج شامل ہوا</item>
+        <item quantity="other">%1$d نئے کرایہ اندراج شامل ہوئے</item>
+    </plurals>
+</resources>

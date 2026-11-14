@@ -1,5 +1,6 @@
 package com.kiraya.diary
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -8,10 +9,13 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.kiraya.diary.core.locale.LocaleHelper
+import com.kiraya.diary.domain.model.ThemeMode
 import com.kiraya.diary.ui.KirayaAppRoot
 import com.kiraya.diary.ui.components.LocalMoneyDisplay
 import com.kiraya.diary.ui.components.MoneyDisplay
 import com.kiraya.diary.ui.lock.LockScreen
+import com.kiraya.diary.ui.onboarding.OnboardingScreen
 import com.kiraya.diary.ui.theme.KirayaTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,7 +31,7 @@ class MainActivity : FragmentActivity() {
             val settings by viewModel.settings.collectAsStateWithLifecycle()
             val unlocked by viewModel.unlocked.collectAsStateWithLifecycle()
             val s = settings
-            KirayaTheme {
+            KirayaTheme(themeMode = s?.themeMode ?: ThemeMode.SYSTEM) {
                 if (s == null) return@KirayaTheme
                 CompositionLocalProvider(
                     LocalMoneyDisplay provides MoneyDisplay(
@@ -36,7 +40,9 @@ class MainActivity : FragmentActivity() {
                         hidden = s.hideAmounts,
                     ),
                 ) {
-                    if (s.lockEnabled && s.hasPin && !unlocked) {
+                    if (!s.onboardingDone) {
+                        OnboardingScreen()
+                    } else if (s.lockEnabled && s.hasPin && !unlocked) {
                         LockScreen(
                             biometricEnabled = s.biometricEnabled,
                             checkPin = viewModel::checkPin,
@@ -48,6 +54,10 @@ class MainActivity : FragmentActivity() {
                 }
             }
         }
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.wrap(newBase))
     }
 
     override fun onStart() {

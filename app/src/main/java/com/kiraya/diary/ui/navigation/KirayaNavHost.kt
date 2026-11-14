@@ -90,6 +90,7 @@ fun KirayaNavHost(
                 onReminders = { navController.navigate(Routes.REMINDERS) },
                 onBackup = { navController.navigate(Routes.BACKUP) },
                 onAppLock = { navController.navigate(Routes.APP_LOCK) },
+                onProperties = { navController.navigate(Routes.PROPERTIES) },
             )
         }
         composable(Routes.APP_LOCK) { AppLockSettingsScreen(onBack = back) }

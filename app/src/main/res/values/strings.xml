@@ -364,4 +364,33 @@
     <string name="lock_hide_amounts">Hide amounts</string>
     <string name="lock_show_amounts">Show amounts</string>
     <string name="lock_hide_amounts_hint">Show •••• instead of money on screen. Receipts and reports still show real amounts.</string>
+
+    <!-- Settings -->
+    <string name="settings_profile">Your details</string>
+    <string name="settings_landlord_name">Your name (landlord)</string>
+    <string name="settings_landlord_hint">Shown on receipts and reminder messages</string>
+    <string name="settings_appearance">Language and theme</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_system">Phone language</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_system">Phone setting</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_currency">Currency format</string>
+    <string name="settings_currency_symbol">Currency symbol</string>
+    <string name="settings_currency_custom">Or type your own</string>
+    <string name="settings_grouping">Use commas in amounts</string>
+    <string name="settings_more">More</string>
+    <string name="settings_about">Kiraya Diary %1$s · Works fully offline</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_1_title">Welcome to Kiraya Diary</string>
+    <string name="onboarding_1_body">Keep all your properties, flats, shops and tenants in one place. Choose your language.</string>
+    <string name="onboarding_2_title">Rent, bills and receipts</string>
+    <string name="onboarding_2_body">Rent is added every month. Record payments, split bijli and gas bills, and send receipts and reminders on WhatsApp.</string>
+    <string name="onboarding_3_title">Private and offline</string>
+    <string name="onboarding_3_body">Your data stays on your phone. No internet needed. Lock the app with a PIN and keep a backup file.</string>
+    <string name="onboarding_skip">Skip</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_start">Get started</string>
 </resources>

@@ -64,6 +64,9 @@ interface RentRepository {
     suspend fun deleteRentEntry(id: Long)
     suspend fun lastRentMonth(tenantId: Long): Int?
 
+    /** Removes a tenant's rent entries for months after [month] (used at move-out). */
+    suspend fun deleteRentEntriesAfter(tenantId: Long, month: Int)
+
     fun observePayments(tenantId: Long): Flow<List<Payment>>
     fun observeAllPayments(): Flow<List<Payment>>
     fun observePaymentsBetween(from: Long, to: Long): Flow<List<PaymentWithTenant>>

@@ -15,6 +15,7 @@ import com.kiraya.diary.ui.expenses.ExpensesScreen
 import com.kiraya.diary.ui.home.HomeScreen
 import com.kiraya.diary.ui.home.QuickAction
 import com.kiraya.diary.ui.lease.LeaseEditScreen
+import com.kiraya.diary.ui.moveout.MoveOutScreen
 import com.kiraya.diary.ui.payments.PaymentEditScreen
 import com.kiraya.diary.ui.properties.PropertiesScreen
 import com.kiraya.diary.ui.properties.PropertyDetailScreen
@@ -123,6 +124,7 @@ fun KirayaNavHost(
                     onRecordPayment = { navController.navigate(Routes.paymentEdit(tenantId = it)) },
                     onEditPayment = { navController.navigate(Routes.paymentEdit(paymentId = it)) },
                     onReceipt = { navController.navigate(Routes.receipt(it)) },
+                    onMoveOut = { navController.navigate(Routes.moveOut(it)) },
                 ),
             )
         }
@@ -183,6 +185,9 @@ fun KirayaNavHost(
         }
         composable(Routes.EXPENSE_EDIT, listOf(longArg(Routes.ARG_EXPENSE_ID, 0L))) {
             ExpenseEditScreen(onDone = back)
+        }
+        composable(Routes.MOVE_OUT, listOf(longArg(Routes.ARG_TENANT_ID))) {
+            MoveOutScreen(onDone = back)
         }
         composable(Routes.LEASE_EDIT, listOf(longArg(Routes.ARG_TENANT_ID))) {
             LeaseEditScreen(onDone = back)

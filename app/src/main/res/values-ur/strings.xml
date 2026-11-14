@@ -311,4 +311,23 @@
     <string name="report_generated">%1$s کو کرایہ ڈائری سے بنائی گئی</string>
     <string name="report_property_line">واجب %1$s · وصول %2$s · خرچ %3$s</string>
     <string name="report_month_line">واجب %1$s · خرچ %2$s</string>
+
+    <!-- Move out -->
+    <string name="move_out_title">مکان خالی کریں</string>
+    <string name="move_out_date">خالی کرنے کی تاریخ</string>
+    <string name="move_out_date_hint">اس تاریخ کے بعد کے مہینوں کا کرایہ ہٹا دیا جائے گا۔</string>
+    <string name="move_out_pending">خالی کرنے تک واجبات</string>
+    <string name="move_out_from_deposit">واجبات کے لیے ایڈوانس سے کاٹیں</string>
+    <string name="move_out_from_deposit_hint">واجبات یا ایڈوانس سے زیادہ نہیں ہو سکتا</string>
+    <string name="move_out_other">دیگر کٹوتی</string>
+    <string name="move_out_other_hint">مثال: نقصان، صفائی یا رنگ</string>
+    <string name="move_out_final_payment">ابھی وصول نقد (اختیاری)</string>
+    <string name="move_out_note">تصفیہ نوٹ</string>
+    <string name="move_out_error">رقم چیک کریں۔ کٹوتی ایڈوانس سے زیادہ نہیں ہو سکتی۔</string>
+    <string name="move_out_total_deducted">ایڈوانس سے کٹوتی</string>
+    <string name="move_out_return">ایڈوانس واپس</string>
+    <string name="move_out_still_owed">کرایہ دار کے ذمے باقی</string>
+    <string name="move_out_still_owed_hint">ایڈوانس کے بعد بھی کرایہ دار کے ذمے رقم باقی ہے۔ آپ بعد میں ان کے صفحے سے ادائیگی درج کر سکتے ہیں۔</string>
+    <string name="move_out_confirm">خالی کرنا پکا کریں</string>
+    <string name="move_out_confirm_message">%1$s کو فارغ کریں؟ ان کا یونٹ خالی ہو جائے گا اور مزید کرایہ نہیں لگے گا۔ ریکارڈ محفوظ رہے گا۔</string>
 </resources>

@@ -60,6 +60,7 @@ data class TenantDetailActions(
     val onRecordPayment: (Long) -> Unit,
     val onEditPayment: (Long) -> Unit,
     val onReceipt: (Long) -> Unit,
+    val onMoveOut: (Long) -> Unit,
 )
 
 @Composable
@@ -96,6 +97,16 @@ fun TenantDetailScreen(
                             Icon(painterResource(R.drawable.ic_more), contentDescription = null)
                         }
                         DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
+                            if (tenant.tenant.isActive) {
+                                DropdownMenuItem(
+                                    text = { Text(stringResource(R.string.move_out_title)) },
+                                    leadingIcon = { Icon(painterResource(R.drawable.ic_move_out), contentDescription = null) },
+                                    onClick = {
+                                        menuOpen = false
+                                        actions.onMoveOut(tenant.tenant.id)
+                                    },
+                                )
+                            }
                             DropdownMenuItem(
                                 text = { Text(stringResource(R.string.tenant_delete)) },
                                 onClick = {
@@ -253,7 +264,19 @@ private fun InfoCard(t: TenantWithUnit) {
             InfoRow(stringResource(R.string.tenant_start_date), DateUtils.formatDate(t.tenant.startDate))
             InfoRow(stringResource(R.string.tenant_due_day), t.tenant.dueDay.toString())
             if (t.tenant.phone.isNotBlank()) InfoRow(stringResource(R.string.tenant_phone), t.tenant.phone)
-            if (t.tenant.cnic.isNotBlank()) InfoRow(stringResource(R.string.tenant_cnic), t.tenant.cnic, last = true)
+            if (t.tenant.cnic.isNotBlank()) InfoRow(stringResource(R.string.tenant_cnic), t.tenant.cnic, last = t.tenant.isActive)
+            if (!t.tenant.isActive) {
+                t.tenant.moveOutDate?.let { InfoRow(stringResource(R.string.move_out_date), DateUtils.formatDate(it)) }
+                InfoRow(stringResource(R.string.move_out_total_deducted), money.format(t.tenant.depositDeducted))
+                InfoRow(
+                    stringResource(R.string.move_out_return),
+                    money.format(t.tenant.depositReturned),
+                    last = t.tenant.settlementNote.isBlank(),
+                )
+                if (t.tenant.settlementNote.isNotBlank()) {
+                    InfoRow(stringResource(R.string.move_out_note), t.tenant.settlementNote, last = true)
+                }
+            }
         }
     }
 }

@@ -311,4 +311,23 @@
     <string name="report_generated">Made on %1$s with Kiraya Diary</string>
     <string name="report_property_line">Due %1$s · Collected %2$s · Expenses %3$s</string>
     <string name="report_month_line">Due %1$s · Expenses %2$s</string>
+
+    <!-- Move out -->
+    <string name="move_out_title">Move out</string>
+    <string name="move_out_date">Move-out date</string>
+    <string name="move_out_date_hint">Rent for months after this date is removed.</string>
+    <string name="move_out_pending">Dues up to move-out</string>
+    <string name="move_out_from_deposit">Take from deposit for dues</string>
+    <string name="move_out_from_deposit_hint">Cannot be more than the dues or the deposit</string>
+    <string name="move_out_other">Other deductions</string>
+    <string name="move_out_other_hint">For example damage, cleaning or paint</string>
+    <string name="move_out_final_payment">Cash received now (optional)</string>
+    <string name="move_out_note">Settlement note</string>
+    <string name="move_out_error">Check the amounts. Deductions cannot be more than the deposit.</string>
+    <string name="move_out_total_deducted">Deducted from deposit</string>
+    <string name="move_out_return">Deposit returned</string>
+    <string name="move_out_still_owed">Tenant still owes</string>
+    <string name="move_out_still_owed_hint">The tenant still owes money after the deposit. You can record a payment later from their page.</string>
+    <string name="move_out_confirm">Confirm move out</string>
+    <string name="move_out_confirm_message">Move out %1$s? Their unit will be marked vacant and no more rent will be added. History is kept.</string>
 </resources>

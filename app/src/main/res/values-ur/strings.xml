@@ -134,4 +134,27 @@
     <string name="tenant_total_charged">کل واجب</string>
     <string name="tenant_total_paid">کل ادا</string>
     <string name="tenant_moved_out_on">%1$s کو چھوڑ گئے</string>
+
+    <!-- Lease -->
+    <string name="lease_title">کرایہ نامہ</string>
+    <string name="lease_none">کوئی کرایہ نامہ نہیں۔ تاریخیں، سالانہ اضافہ اور معاہدے کی تصویر شامل کریں۔</string>
+    <string name="lease_add">کرایہ نامہ شامل کریں</string>
+    <string name="lease_edit">کرایہ نامہ میں ترمیم</string>
+    <string name="lease_delete">کرایہ نامہ حذف کریں</string>
+    <string name="lease_delete_message">یہ کرایہ نامہ اور اس کی تصویر حذف کریں؟ کرائے کا ریکارڈ رہے گا۔</string>
+    <string name="lease_start">معاہدہ شروع</string>
+    <string name="lease_end">معاہدہ ختم</string>
+    <string name="lease_no_end">کوئی آخری تاریخ نہیں</string>
+    <string name="lease_clear_end">آخری تاریخ ہٹائیں</string>
+    <string name="lease_end_error">آخری تاریخ شروع کی تاریخ کے بعد ہونی چاہیے</string>
+    <string name="lease_years">%1$d سال</string>
+    <string name="lease_base_rent">شروع کا کرایہ</string>
+    <string name="lease_base_rent_hint">سالانہ اضافہ اس رقم پر لگے گا</string>
+    <string name="lease_increase">سالانہ کرایہ اضافہ</string>
+    <string name="lease_increase_hint">مثال 10۔ اضافہ نہ ہو تو خالی چھوڑ دیں۔</string>
+    <string name="lease_agreement_photo">معاہدے کی تصویر</string>
+    <string name="lease_current_rent">موجودہ کرایہ</string>
+    <string name="lease_next_increase">اگلا اضافہ</string>
+    <string name="lease_ended">معاہدہ ختم ہو گیا</string>
+    <string name="lease_ends_in">%1$d دن میں ختم</string>
 </resources>

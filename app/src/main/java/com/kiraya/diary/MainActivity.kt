@@ -1,8 +1,10 @@
 package com.kiraya.diary
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.runtime.CompositionLocalProvider
@@ -14,8 +16,6 @@ import com.kiraya.diary.domain.model.ThemeMode
 import com.kiraya.diary.ui.KirayaAppRoot
 import com.kiraya.diary.ui.components.LocalMoneyDisplay
 import com.kiraya.diary.ui.components.MoneyDisplay
-import com.kiraya.diary.ui.lock.LockScreen
-import com.kiraya.diary.ui.onboarding.OnboardingScreen
 import com.kiraya.diary.ui.theme.KirayaTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,12 +28,18 @@ class MainActivity : FragmentActivity() {
         // Leave the splash theme as soon as the app is ready to draw.
         setTheme(R.style.Theme_KirayaDiary)
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        // Always light: dark status bar icons even when the phone is in dark mode.
+        enableEdgeToEdge(
+            statusBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
+            navigationBarStyle = SystemBarStyle.light(Color.TRANSPARENT, Color.TRANSPARENT),
+        )
         setContent {
             val settings by viewModel.settings.collectAsStateWithLifecycle()
-            val unlocked by viewModel.unlocked.collectAsStateWithLifecycle()
+            // Used by the app lock, which is hidden for now.
+            // val unlocked by viewModel.unlocked.collectAsStateWithLifecycle()
             val s = settings
-            KirayaTheme(themeMode = s?.themeMode ?: ThemeMode.SYSTEM) {
+            // Light mode only for now. Later: KirayaTheme(themeMode = s?.themeMode ?: ThemeMode.SYSTEM)
+            KirayaTheme(themeMode = ThemeMode.LIGHT) {
                 if (s == null) return@KirayaTheme
                 CompositionLocalProvider(
                     LocalMoneyDisplay provides MoneyDisplay(
@@ -42,17 +48,19 @@ class MainActivity : FragmentActivity() {
                         hidden = s.hideAmounts,
                     ),
                 ) {
-                    if (!s.onboardingDone) {
-                        OnboardingScreen()
-                    } else if (s.lockEnabled && s.hasPin && !unlocked) {
-                        LockScreen(
-                            biometricEnabled = s.biometricEnabled,
-                            checkPin = viewModel::checkPin,
-                            onUnlocked = viewModel::unlock,
-                        )
-                    } else {
-                        KirayaAppRoot()
-                    }
+                    // Onboarding and the app lock are hidden for now. Turn back on in a later update:
+                    // if (!s.onboardingDone) {
+                    //     OnboardingScreen()
+                    // } else if (s.lockEnabled && s.hasPin && !unlocked) {
+                    //     LockScreen(
+                    //         biometricEnabled = s.biometricEnabled,
+                    //         checkPin = viewModel::checkPin,
+                    //         onUnlocked = viewModel::unlock,
+                    //     )
+                    // } else {
+                    //     KirayaAppRoot()
+                    // }
+                    KirayaAppRoot()
                 }
             }
         }

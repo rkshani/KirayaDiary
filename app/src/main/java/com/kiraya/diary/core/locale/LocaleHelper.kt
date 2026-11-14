@@ -16,6 +16,9 @@ object LocaleHelper {
     private const val PREFS = "locale_prefs"
     private const val KEY = "app_language"
 
+    /** The app is English-only for now, whatever the phone language is. */
+    private const val ONLY_LANGUAGE = "en"
+
     /** "" = follow the phone, otherwise "en" or "ur". */
     fun saved(context: Context): String =
         context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getString(KEY, "").orEmpty()
@@ -30,8 +33,10 @@ object LocaleHelper {
 
     /** Wraps a base context so resources use the saved language (Android 12 and below). */
     fun wrap(base: Context): Context {
-        val code = saved(base)
-        if (code.isEmpty() || Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) return base
+        // Only English for now; Urdu comes back in a later update. Then use the saved choice again:
+        // val code = saved(base)
+        // if (code.isEmpty() || Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) return base
+        val code = ONLY_LANGUAGE
         val locale = Locale.forLanguageTag(code)
         Locale.setDefault(locale)
         val config = Configuration(base.resources.configuration)

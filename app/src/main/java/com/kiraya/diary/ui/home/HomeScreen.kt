@@ -51,6 +51,7 @@ data class QuickAction(
 
 @Composable
 fun HomeScreen(
+    onMenuClick: () -> Unit,
     onTenantClick: (Long) -> Unit,
     quickActions: List<QuickAction>,
     modifier: Modifier = Modifier,
@@ -63,6 +64,11 @@ fun HomeScreen(
         topBar = {
             KirayaTopBar(
                 title = stringResource(R.string.app_name),
+                navigationIcon = {
+                    IconButton(onClick = onMenuClick) {
+                        Icon(painterResource(R.drawable.ic_menu), stringResource(R.string.drawer_open))
+                    }
+                },
                 actions = {
                     IconButton(onClick = viewModel::toggleAmounts) {
                         Icon(

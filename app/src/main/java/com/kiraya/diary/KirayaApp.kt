@@ -37,7 +37,8 @@ class KirayaApp : Application(), Configuration.Provider {
 
     override fun onCreate() {
         super.onCreate()
-        reminderNotifier.createChannels()
+        // Reminder notifications are hidden for now. Turn back on in a later update.
+        // reminderNotifier.createChannels()
         workScheduler.scheduleAll()
         // Catch up right away so the new month's rent shows without waiting for the worker.
         appScope.launch { runCatching { generateRentEntries() } }

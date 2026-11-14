@@ -16,7 +16,6 @@ import com.kiraya.diary.ui.expenses.ExpensesScreen
 import com.kiraya.diary.ui.home.HomeScreen
 import com.kiraya.diary.ui.home.QuickAction
 import com.kiraya.diary.ui.lease.LeaseEditScreen
-import com.kiraya.diary.ui.lock.AppLockSettingsScreen
 import com.kiraya.diary.ui.moveout.MoveOutScreen
 import com.kiraya.diary.ui.payments.PaymentEditScreen
 import com.kiraya.diary.ui.properties.PropertiesScreen
@@ -24,7 +23,6 @@ import com.kiraya.diary.ui.properties.PropertyDetailScreen
 import com.kiraya.diary.ui.properties.PropertyEditScreen
 import com.kiraya.diary.ui.properties.UnitEditScreen
 import com.kiraya.diary.ui.receipts.ReceiptScreen
-import com.kiraya.diary.ui.reminders.RemindersScreen
 import com.kiraya.diary.ui.rent.MonthlyRentScreen
 import com.kiraya.diary.ui.rent.RentEntryEditScreen
 import com.kiraya.diary.ui.reports.ReportsScreen
@@ -42,6 +40,7 @@ private fun longArg(name: String, default: Long? = null) = navArgument(name) {
 @Composable
 fun KirayaNavHost(
     navController: NavHostController,
+    onOpenDrawer: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val back: () -> Unit = { navController.popBackStack() }
@@ -52,6 +51,7 @@ fun KirayaNavHost(
     ) {
         composable(Routes.HOME) {
             HomeScreen(
+                onMenuClick = onOpenDrawer,
                 onTenantClick = { navController.navigate(Routes.tenantDetail(it)) },
                 quickActions = listOf(
                     QuickAction(R.string.payment_add, R.drawable.ic_payment) {
@@ -63,9 +63,10 @@ fun KirayaNavHost(
                     QuickAction(R.string.quick_bills, R.drawable.ic_bill) {
                         navController.navigate(Routes.BILLS)
                     },
-                    QuickAction(R.string.reminders_title, R.drawable.ic_notification) {
-                        navController.navigate(Routes.REMINDERS)
-                    },
+                    // Reminders are hidden for now. Turn back on in a later update.
+                    // QuickAction(R.string.reminders_title, R.drawable.ic_notification) {
+                    //     navController.navigate(Routes.REMINDERS)
+                    // },
                     QuickAction(R.string.expenses_title, R.drawable.ic_expense) {
                         navController.navigate(Routes.EXPENSES)
                     },
@@ -87,13 +88,15 @@ fun KirayaNavHost(
         composable(Routes.REPORTS) { ReportsScreen() }
         composable(Routes.SETTINGS) {
             SettingsScreen(
-                onReminders = { navController.navigate(Routes.REMINDERS) },
+                // Hidden for now:
+                // onReminders = { navController.navigate(Routes.REMINDERS) },
                 onBackup = { navController.navigate(Routes.BACKUP) },
-                onAppLock = { navController.navigate(Routes.APP_LOCK) },
+                // onAppLock = { navController.navigate(Routes.APP_LOCK) },
                 onProperties = { navController.navigate(Routes.PROPERTIES) },
             )
         }
-        composable(Routes.APP_LOCK) { AppLockSettingsScreen(onBack = back) }
+        // App lock is hidden for now. Turn back on in a later update.
+        // composable(Routes.APP_LOCK) { AppLockSettingsScreen(onBack = back) }
         composable(Routes.BACKUP) { BackupScreen(onBack = back) }
 
         // Properties and units
@@ -180,12 +183,13 @@ fun KirayaNavHost(
         composable(Routes.BILL_EDIT, listOf(longArg(Routes.ARG_BILL_ID, 0L))) {
             BillEditScreen(onDone = back)
         }
-        composable(Routes.REMINDERS) {
-            RemindersScreen(
-                onBack = back,
-                onTenantClick = { navController.navigate(Routes.tenantDetail(it)) },
-            )
-        }
+        // Reminders are hidden for now. Turn back on in a later update.
+        // composable(Routes.REMINDERS) {
+        //     RemindersScreen(
+        //         onBack = back,
+        //         onTenantClick = { navController.navigate(Routes.tenantDetail(it)) },
+        //     )
+        // }
         // Expenses
         composable(Routes.EXPENSES) {
             ExpensesScreen(

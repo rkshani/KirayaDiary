@@ -32,6 +32,7 @@ fun KirayaTopBar(
     title: String,
     modifier: Modifier = Modifier,
     onBack: (() -> Unit)? = null,
+    navigationIcon: (@Composable () -> Unit)? = null,
     scrollBehavior: TopAppBarScrollBehavior? = null,
     actions: @Composable RowScope.() -> Unit = {},
 ) {
@@ -39,7 +40,9 @@ fun KirayaTopBar(
         title = { Text(title, maxLines = 1, overflow = TextOverflow.Ellipsis) },
         modifier = modifier,
         navigationIcon = {
-            if (onBack != null) {
+            if (navigationIcon != null) {
+                navigationIcon()
+            } else if (onBack != null) {
                 IconButton(onClick = onBack) {
                     Icon(painterResource(R.drawable.ic_back), contentDescription = stringResource(R.string.action_back))
                 }

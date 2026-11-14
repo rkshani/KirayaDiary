@@ -20,6 +20,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
@@ -56,9 +57,23 @@ fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val hidden by viewModel.amountsHidden.collectAsStateWithLifecycle()
     Scaffold(
         modifier = modifier,
-        topBar = { KirayaTopBar(title = stringResource(R.string.app_name)) },
+        topBar = {
+            KirayaTopBar(
+                title = stringResource(R.string.app_name),
+                actions = {
+                    IconButton(onClick = viewModel::toggleAmounts) {
+                        Icon(
+                            painterResource(R.drawable.ic_visibility),
+                            stringResource(if (hidden) R.string.lock_show_amounts else R.string.lock_hide_amounts),
+                            tint = if (hidden) MaterialTheme.colorScheme.outline else MaterialTheme.colorScheme.onSurface,
+                        )
+                    }
+                },
+            )
+        },
     ) { padding ->
         LazyColumn(
             contentPadding = PaddingValues(

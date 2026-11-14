@@ -20,4 +20,18 @@
     <string name="action_share">Share</string>
 
     <string name="coming_soon">Coming soon</string>
+
+    <!-- Home dashboard -->
+    <string name="home_this_month">This month · %1$s</string>
+    <string name="home_collected">Collected</string>
+    <string name="home_due">Due</string>
+    <string name="home_pending">Pending</string>
+    <string name="home_total_pending">Total pending (all months)</string>
+    <string name="home_active_tenants">Tenants</string>
+    <string name="home_units">Units</string>
+    <string name="home_vacant">Vacant</string>
+    <string name="home_quick_actions">Quick actions</string>
+    <string name="home_overdue_title">Overdue tenants</string>
+    <string name="home_no_overdue">No overdue rent. All clear!</string>
+    <string name="home_days_overdue">%1$d days overdue</string>
 </resources>

@@ -20,4 +20,18 @@
     <string name="action_share">شیئر کریں</string>
 
     <string name="coming_soon">جلد آ رہا ہے</string>
+
+    <!-- Home dashboard -->
+    <string name="home_this_month">اس مہینے · %1$s</string>
+    <string name="home_collected">وصول ہوا</string>
+    <string name="home_due">واجب الادا</string>
+    <string name="home_pending">باقی</string>
+    <string name="home_total_pending">کل باقی (تمام مہینے)</string>
+    <string name="home_active_tenants">کرایہ دار</string>
+    <string name="home_units">یونٹس</string>
+    <string name="home_vacant">خالی</string>
+    <string name="home_quick_actions">فوری کام</string>
+    <string name="home_overdue_title">تاخیر والے کرایہ دار</string>
+    <string name="home_no_overdue">کوئی کرایہ لیٹ نہیں۔ سب ٹھیک ہے!</string>
+    <string name="home_days_overdue">%1$d دن سے لیٹ</string>
 </resources>

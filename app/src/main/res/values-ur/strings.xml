@@ -94,4 +94,44 @@
     <string name="unit_default_rent">ماہانہ کرایہ (اختیاری)</string>
     <string name="unit_occupied">بھرا ہوا</string>
     <string name="unit_vacant">خالی</string>
+
+    <!-- Photos -->
+    <string name="photo_gallery">گیلری</string>
+    <string name="photo_camera">کیمرہ</string>
+    <string name="photo_change">تبدیل کریں</string>
+    <string name="photo_remove">ہٹائیں</string>
+
+    <!-- Tenants -->
+    <string name="quick_add_tenant">کرایہ دار شامل کریں</string>
+    <string name="tenants_empty_title">ابھی کوئی کرایہ دار نہیں</string>
+    <string name="tenants_empty_message">کرایہ دار کو فون، شناختی کارڈ، یونٹ اور ماہانہ کرائے کے ساتھ شامل کریں۔</string>
+    <string name="tenants_active">موجودہ</string>
+    <string name="tenants_moved_out">چھوڑ گئے</string>
+    <string name="tenants_search">نام، فون یا یونٹ تلاش کریں</string>
+    <string name="tenants_none_found">کوئی کرایہ دار نہیں ملا۔</string>
+    <string name="tenant_add">کرایہ دار شامل کریں</string>
+    <string name="tenant_edit">کرایہ دار میں ترمیم</string>
+    <string name="tenant_delete">کرایہ دار حذف کریں</string>
+    <string name="tenant_delete_message">اس سے کرایہ دار اور اس کے تمام کرائے، ادائیگیاں اور معاہدے حذف ہو جائیں گے۔ ریکارڈ رکھنے کے لیے مکان خالی کریں استعمال کریں۔ یہ واپس نہیں ہو سکتا۔</string>
+    <string name="tenant_name">پورا نام</string>
+    <string name="tenant_phone">فون</string>
+    <string name="tenant_cnic">شناختی کارڈ نمبر</string>
+    <string name="tenant_cnic_photo">شناختی کارڈ کی تصویر</string>
+    <string name="tenant_unit">یونٹ</string>
+    <string name="tenant_no_unit">کوئی یونٹ نہیں</string>
+    <string name="tenant_unit_none_hint">یہاں یونٹ چننے کے لیے پہلے جائیداد اور یونٹ شامل کریں۔</string>
+    <string name="tenant_unit_taken">%1$s کے پاس</string>
+    <string name="tenant_rent">ماہانہ کرایہ</string>
+    <string name="tenant_deposit">ایڈوانس / سیکیورٹی</string>
+    <string name="tenant_start_date">شروع کی تاریخ</string>
+    <string name="tenant_due_day">کرایہ کی تاریخ</string>
+    <string name="tenant_due_day_hint">مہینے کا دن (1 سے 28)</string>
+    <string name="tenant_call">کال کریں</string>
+    <string name="tenant_clear">صاف</string>
+    <string name="tenant_balance_due">باقی رقم</string>
+    <string name="tenant_balance_credit">پیشگی ادا</string>
+    <string name="tenant_balance_clear">تمام واجبات ادا ہیں</string>
+    <string name="tenant_total_charged">کل واجب</string>
+    <string name="tenant_total_paid">کل ادا</string>
+    <string name="tenant_moved_out_on">%1$s کو چھوڑ گئے</string>
 </resources>

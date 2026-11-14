@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- Camera writes photos here before they are copied into app storage. -->
+    <cache-path name="camera" path="camera/" />
+    <!-- Receipts, reports and backups that are shared with other apps. -->
+    <cache-path name="shared" path="shared/" />
+</paths>

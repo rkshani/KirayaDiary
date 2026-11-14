@@ -20,7 +20,12 @@ fun KirayaNavHost(
         startDestination = Routes.HOME,
         modifier = modifier,
     ) {
-        composable(Routes.HOME) { HomeScreen() }
+        composable(Routes.HOME) {
+            HomeScreen(
+                onTenantClick = { },
+                quickActions = emptyList(),
+            )
+        }
         composable(Routes.TENANTS) { TenantsScreen() }
         composable(Routes.REPORTS) { ReportsScreen() }
         composable(Routes.SETTINGS) { SettingsScreen() }

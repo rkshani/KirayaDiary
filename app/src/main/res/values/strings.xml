@@ -94,4 +94,44 @@
     <string name="unit_default_rent">Monthly rent (optional)</string>
     <string name="unit_occupied">Occupied</string>
     <string name="unit_vacant">Vacant</string>
+
+    <!-- Photos -->
+    <string name="photo_gallery">Gallery</string>
+    <string name="photo_camera">Camera</string>
+    <string name="photo_change">Change</string>
+    <string name="photo_remove">Remove</string>
+
+    <!-- Tenants -->
+    <string name="quick_add_tenant">Add tenant</string>
+    <string name="tenants_empty_title">No tenants yet</string>
+    <string name="tenants_empty_message">Add a tenant with their phone, CNIC, unit and monthly rent.</string>
+    <string name="tenants_active">Active</string>
+    <string name="tenants_moved_out">Moved out</string>
+    <string name="tenants_search">Search name, phone or unit</string>
+    <string name="tenants_none_found">No tenants found.</string>
+    <string name="tenant_add">Add tenant</string>
+    <string name="tenant_edit">Edit tenant</string>
+    <string name="tenant_delete">Delete tenant</string>
+    <string name="tenant_delete_message">This deletes the tenant with all rent, payments and lease records. To keep history, use Move out instead. This cannot be undone.</string>
+    <string name="tenant_name">Full name</string>
+    <string name="tenant_phone">Phone</string>
+    <string name="tenant_cnic">CNIC number</string>
+    <string name="tenant_cnic_photo">CNIC photo</string>
+    <string name="tenant_unit">Unit</string>
+    <string name="tenant_no_unit">No unit</string>
+    <string name="tenant_unit_none_hint">Add properties and units first to pick one here.</string>
+    <string name="tenant_unit_taken">Occupied by %1$s</string>
+    <string name="tenant_rent">Monthly rent</string>
+    <string name="tenant_deposit">Advance / security deposit</string>
+    <string name="tenant_start_date">Start date</string>
+    <string name="tenant_due_day">Rent due day</string>
+    <string name="tenant_due_day_hint">Day of the month (1 to 28)</string>
+    <string name="tenant_call">Call</string>
+    <string name="tenant_clear">Clear</string>
+    <string name="tenant_balance_due">Balance due</string>
+    <string name="tenant_balance_credit">Paid in advance</string>
+    <string name="tenant_balance_clear">All dues are clear</string>
+    <string name="tenant_total_charged">Total charged</string>
+    <string name="tenant_total_paid">Total paid</string>
+    <string name="tenant_moved_out_on">Moved out on %1$s</string>
 </resources>

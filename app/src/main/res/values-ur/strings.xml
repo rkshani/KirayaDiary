@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">کرایہ ڈائری</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">ہوم</string>
+    <string name="nav_tenants">کرایہ دار</string>
+    <string name="nav_reports">رپورٹس</string>
+    <string name="nav_settings">سیٹنگز</string>
+
+    <!-- Common actions -->
+    <string name="action_back">واپس</string>
+    <string name="action_save">محفوظ کریں</string>
+    <string name="action_cancel">منسوخ</string>
+    <string name="action_delete">حذف کریں</string>
+    <string name="action_edit">ترمیم</string>
+    <string name="action_add">شامل کریں</string>
+    <string name="action_ok">ٹھیک ہے</string>
+    <string name="action_close">بند کریں</string>
+    <string name="action_share">شیئر کریں</string>
+
+    <string name="coming_soon">جلد آ رہا ہے</string>
 </resources>

@@ -8,6 +8,9 @@ import com.kiraya.diary.core.coroutines.ApplicationScope
 import com.kiraya.diary.core.date.DateUtils
 import com.kiraya.diary.core.money.Money
 import com.kiraya.diary.data.files.PhotoStorage
+import com.kiraya.diary.data.reminders.ReminderMessageBuilder
+import com.kiraya.diary.data.settings.AppSettings
+import com.kiraya.diary.data.settings.SettingsRepository
 import com.kiraya.diary.domain.ledger.TenantLedger
 import com.kiraya.diary.domain.model.Lease
 import com.kiraya.diary.domain.model.Tenant
@@ -107,9 +110,30 @@ class TenantDetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val tenantRepository: TenantRepository,
     private val photoStorage: PhotoStorage,
+    private val messageBuilder: ReminderMessageBuilder,
+    settingsRepository: SettingsRepository,
     observeLedger: ObserveTenantLedgerUseCase,
 ) : ViewModel() {
     val tenantId: Long = checkNotNull(savedStateHandle[Routes.ARG_TENANT_ID])
+
+    val settings: StateFlow<AppSettings> = settingsRepository.settings
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), AppSettings())
+
+    /** Rent reminder text for WhatsApp/SMS in the given language. */
+    fun reminderMessage(language: String): String {
+        val st = state.value
+        val t = st.tenant ?: return ""
+        val s = settings.value
+        return messageBuilder.build(
+            language = language,
+            tenantName = t.tenant.name,
+            amount = st.ledger.pending,
+            months = st.ledger.charges.filter { it.remaining > 0 }.map { it.month }.distinct().sorted(),
+            currencySymbol = s.currencySymbol,
+            landlordName = s.landlordName,
+            unitName = t.unitName,
+        )
+    }
 
     val state: StateFlow<TenantDetailState> = combine(
         tenantRepository.observeTenant(tenantId),

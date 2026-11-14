@@ -237,4 +237,40 @@
     <string name="receipt_whatsapp">واٹس ایپ</string>
     <string name="receipt_share_title">رسید بھیجیں</string>
     <string name="receipt_failed">رسید نہیں بن سکی۔</string>
+
+    <!-- Reminders -->
+    <string name="reminders_title">یاد دہانیاں</string>
+    <string name="reminders_enable">کرایہ کی یاد دہانی</string>
+    <string name="reminders_enable_hint">ہر صبح واجب یا لیٹ کرائے اور جلد ختم ہونے والے کرایہ ناموں کی اطلاع۔</string>
+    <string name="reminders_allow">اطلاعات کی اجازت دیں</string>
+    <string name="reminders_when">کب یاد دلائیں</string>
+    <string name="reminders_on_due_day">اسی دن</string>
+    <string name="reminders_days_before">%1$d دن پہلے</string>
+    <string name="reminders_lease_alert">کرایہ نامہ ختم ہونے کی اطلاع</string>
+    <string name="reminders_days">%1$d دن</string>
+    <string name="reminders_message_language">پیغام کی زبان</string>
+    <string name="reminders_test">ابھی اطلاع بھیجیں</string>
+    <string name="reminders_due_title">واجب یا لیٹ کرایہ</string>
+    <string name="reminders_none_due">ابھی کوئی کرایہ واجب نہیں۔</string>
+    <string name="reminders_overdue_since">%1$s سے لیٹ</string>
+    <string name="reminders_leases_title">جلد ختم ہونے والے کرایہ نامے</string>
+    <string name="reminders_no_leases">کوئی کرایہ نامہ جلد ختم نہیں ہو رہا۔</string>
+    <string name="reminder_send_title">یاد دہانی بھیجیں</string>
+    <string name="reminder_sms">ایس ایم ایس</string>
+    <string name="language_english">English</string>
+    <string name="language_urdu">اردو</string>
+    <string name="channel_rent">واجب کرایہ</string>
+    <string name="channel_lease">کرایہ نامہ کی اطلاعات</string>
+    <string name="notif_rent_text">کل واجب: %1$s</string>
+    <string name="notif_rent_text_overdue">کل واجب: %1$s · %2$d لیٹ</string>
+    <string name="notif_lease_text">دیکھنے کے لیے دبائیں۔</string>
+    <string name="notif_lease_line">%1$s: %2$s کو ختم</string>
+    <string name="notif_lease_line_ended">%1$s: کرایہ نامہ ختم ہو گیا</string>
+
+    <!-- Reminder message (sent to tenants) -->
+    <string name="msg_greeting">السلام علیکم %1$s،</string>
+    <string name="msg_due">آپ کا کرایہ %1$s (%2$s) واجب الادا ہے۔</string>
+    <string name="msg_due_unit">%1$s کا کرایہ %2$s (%3$s) واجب الادا ہے۔</string>
+    <string name="msg_request">براہ کرم جلد از جلد ادا کر دیں۔</string>
+    <string name="msg_thanks">شکریہ۔</string>
 </resources>

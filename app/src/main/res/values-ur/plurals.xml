@@ -4,4 +4,12 @@
         <item quantity="one">%1$d نیا کرایہ اندراج شامل ہوا</item>
         <item quantity="other">%1$d نئے کرایہ اندراج شامل ہوئے</item>
     </plurals>
+    <plurals name="notif_rent_title">
+        <item quantity="one">%1$d کرایہ دار کا کرایہ واجب ہے</item>
+        <item quantity="other">%1$d کرایہ داروں کا کرایہ واجب ہے</item>
+    </plurals>
+    <plurals name="notif_lease_title">
+        <item quantity="one">%1$d کرایہ نامہ جلد ختم ہو رہا ہے</item>
+        <item quantity="other">%1$d کرایہ نامے جلد ختم ہو رہے ہیں</item>
+    </plurals>
 </resources>

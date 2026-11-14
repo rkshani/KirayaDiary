@@ -19,6 +19,7 @@ import com.kiraya.diary.ui.properties.PropertyDetailScreen
 import com.kiraya.diary.ui.properties.PropertyEditScreen
 import com.kiraya.diary.ui.properties.UnitEditScreen
 import com.kiraya.diary.ui.receipts.ReceiptScreen
+import com.kiraya.diary.ui.reminders.RemindersScreen
 import com.kiraya.diary.ui.rent.MonthlyRentScreen
 import com.kiraya.diary.ui.rent.RentEntryEditScreen
 import com.kiraya.diary.ui.reports.ReportsScreen
@@ -56,6 +57,9 @@ fun KirayaNavHost(
                     },
                     QuickAction(R.string.quick_bills, R.drawable.ic_bill) {
                         navController.navigate(Routes.BILLS)
+                    },
+                    QuickAction(R.string.reminders_title, R.drawable.ic_notification) {
+                        navController.navigate(Routes.REMINDERS)
                     },
                     QuickAction(R.string.quick_add_tenant, R.drawable.ic_person) {
                         navController.navigate(Routes.tenantEdit())
@@ -157,6 +161,12 @@ fun KirayaNavHost(
         }
         composable(Routes.BILL_EDIT, listOf(longArg(Routes.ARG_BILL_ID, 0L))) {
             BillEditScreen(onDone = back)
+        }
+        composable(Routes.REMINDERS) {
+            RemindersScreen(
+                onBack = back,
+                onTenantClick = { navController.navigate(Routes.tenantDetail(it)) },
+            )
         }
         composable(Routes.LEASE_EDIT, listOf(longArg(Routes.ARG_TENANT_ID))) {
             LeaseEditScreen(onDone = back)

@@ -2,5 +2,7 @@
 <!-- Languages shown in Android 13+ system "App languages" settings. -->
 <locale-config xmlns:android="http://schemas.android.com/apk/res/android">
     <locale android:name="en" />
+    <!-- Urdu is hidden for now. It comes back in a later update.
     <locale android:name="ur" />
+    -->
 </locale-config>

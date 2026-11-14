@@ -3,8 +3,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Rent due and lease-ending notifications (asked at runtime on Android 13+). -->
+    <!-- Reminder notifications are hidden for now. Turn this back on in a later update.
+    Rent due and lease-ending notifications (asked at runtime on Android 13+).
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    -->
+
+    <!-- App lock (fingerprint) is hidden for now, so drop the permissions the biometric
+         library adds. Delete these two lines when the app lock comes back. -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" tools:node="remove" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" tools:node="remove" />
 
     <application
         android:name=".KirayaApp"

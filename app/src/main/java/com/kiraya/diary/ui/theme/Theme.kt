@@ -1,6 +1,5 @@
 package com.kiraya.diary.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -93,11 +92,13 @@ fun KirayaTheme(
     themeMode: ThemeMode = ThemeMode.SYSTEM,
     content: @Composable () -> Unit,
 ) {
-    val dark = when (themeMode) {
-        ThemeMode.SYSTEM -> isSystemInDarkTheme()
-        ThemeMode.LIGHT -> false
-        ThemeMode.DARK -> true
-    }
+    // Dark mode is hidden for now: the app is always light. Turn back on in a later update.
+    // val dark = when (themeMode) {
+    //     ThemeMode.SYSTEM -> isSystemInDarkTheme()
+    //     ThemeMode.LIGHT -> false
+    //     ThemeMode.DARK -> true
+    // }
+    val dark = false
     CompositionLocalProvider(LocalStatusColors provides if (dark) DarkStatus else LightStatus) {
         MaterialTheme(
             colorScheme = if (dark) DarkColors else LightColors,

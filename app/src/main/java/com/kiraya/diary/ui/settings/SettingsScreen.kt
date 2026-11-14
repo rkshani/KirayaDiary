@@ -1,7 +1,5 @@
 package com.kiraya.diary.ui.settings
 
-import android.app.Activity
-import android.os.Build
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.clickable
@@ -25,7 +23,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
@@ -35,7 +32,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.kiraya.diary.BuildConfig
 import com.kiraya.diary.R
 import com.kiraya.diary.core.money.Money
-import com.kiraya.diary.domain.model.ThemeMode
 import com.kiraya.diary.ui.components.ChoiceChips
 import com.kiraya.diary.ui.components.KirayaTopBar
 import com.kiraya.diary.ui.components.SectionTitle
@@ -44,15 +40,15 @@ import com.kiraya.diary.ui.lock.SwitchRow
 
 @Composable
 fun SettingsScreen(
-    onReminders: () -> Unit,
+    // Reminders and app lock are hidden for now. Turn back on in a later update.
+    // onReminders: () -> Unit,
     onBackup: () -> Unit,
-    onAppLock: () -> Unit,
+    // onAppLock: () -> Unit,
     onProperties: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: SettingsViewModel = hiltViewModel(),
 ) {
     val s by viewModel.settings.collectAsStateWithLifecycle()
-    val context = LocalContext.current
 
     Scaffold(
         modifier = modifier,
@@ -68,45 +64,47 @@ fun SettingsScreen(
             SectionTitle(stringResource(R.string.settings_profile))
             ProfileCard(s.landlordName, s.landlordPhone, viewModel::setLandlord)
 
-            SectionTitle(stringResource(R.string.settings_appearance))
-            OutlinedCard(Modifier.fillMaxWidth()) {
-                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                    ChoiceChips(
-                        options = listOf("", "en", "ur"),
-                        selected = s.appLanguage,
-                        label = {
-                            when (it) {
-                                "en" -> stringResource(R.string.language_english)
-                                "ur" -> stringResource(R.string.language_urdu)
-                                else -> stringResource(R.string.settings_language_system)
-                            }
-                        },
-                        onSelect = { code ->
-                            if (code != s.appLanguage) {
-                                viewModel.setLanguage(code)
-                                // Android 13+ restarts the screen by itself.
-                                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) (context as? Activity)?.recreate()
-                            }
-                        },
-                        title = stringResource(R.string.settings_language),
-                    )
-                    ChoiceChips(
-                        options = ThemeMode.entries,
-                        selected = s.themeMode,
-                        label = {
-                            stringResource(
-                                when (it) {
-                                    ThemeMode.SYSTEM -> R.string.settings_theme_system
-                                    ThemeMode.LIGHT -> R.string.settings_theme_light
-                                    ThemeMode.DARK -> R.string.settings_theme_dark
-                                },
-                            )
-                        },
-                        onSelect = viewModel::setTheme,
-                        title = stringResource(R.string.settings_theme),
-                    )
-                }
-            }
+            // Language (English only) and theme (light only) are hidden for now.
+            // Turn back on in a later update.
+//            SectionTitle(stringResource(R.string.settings_appearance))
+//            OutlinedCard(Modifier.fillMaxWidth()) {
+//                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+//                    ChoiceChips(
+//                        options = listOf("", "en", "ur"),
+//                        selected = s.appLanguage,
+//                        label = {
+//                            when (it) {
+//                                "en" -> stringResource(R.string.language_english)
+//                                "ur" -> stringResource(R.string.language_urdu)
+//                                else -> stringResource(R.string.settings_language_system)
+//                            }
+//                        },
+//                        onSelect = { code ->
+//                            if (code != s.appLanguage) {
+//                                viewModel.setLanguage(code)
+//                                // Android 13+ restarts the screen by itself.
+//                                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) (context as? Activity)?.recreate()
+//                            }
+//                        },
+//                        title = stringResource(R.string.settings_language),
+//                    )
+//                    ChoiceChips(
+//                        options = ThemeMode.entries,
+//                        selected = s.themeMode,
+//                        label = {
+//                            stringResource(
+//                                when (it) {
+//                                    ThemeMode.SYSTEM -> R.string.settings_theme_system
+//                                    ThemeMode.LIGHT -> R.string.settings_theme_light
+//                                    ThemeMode.DARK -> R.string.settings_theme_dark
+//                                },
+//                            )
+//                        },
+//                        onSelect = viewModel::setTheme,
+//                        title = stringResource(R.string.settings_theme),
+//                    )
+//                }
+//            }
 
             SectionTitle(stringResource(R.string.settings_currency))
             CurrencyCard(s.currencySymbol, s.groupDigits, viewModel::setCurrency)
@@ -115,10 +113,11 @@ fun SettingsScreen(
             OutlinedCard(Modifier.fillMaxWidth()) {
                 SettingsRow(R.string.properties_title, R.drawable.ic_property, onProperties)
                 HorizontalDivider()
-                SettingsRow(R.string.reminders_title, R.drawable.ic_notification, onReminders)
-                HorizontalDivider()
-                SettingsRow(R.string.lock_title, R.drawable.ic_lock, onAppLock)
-                HorizontalDivider()
+                // Hidden for now. Turn back on in a later update.
+                // SettingsRow(R.string.reminders_title, R.drawable.ic_notification, onReminders)
+                // HorizontalDivider()
+                // SettingsRow(R.string.lock_title, R.drawable.ic_lock, onAppLock)
+                // HorizontalDivider()
                 SettingsRow(R.string.backup_title, R.drawable.ic_backup, onBackup)
             }
             Text(

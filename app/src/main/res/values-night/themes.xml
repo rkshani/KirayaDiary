@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Dark mode is hidden for now, so night mode uses the light theme too.
+         It comes back in a later update. The old dark theme:
+
     <style name="Theme.KirayaDiary" parent="android:Theme.Material.NoActionBar">
         <item name="android:windowBackground">#FF0E1514</item>
+    </style>
+    -->
+    <style name="Theme.KirayaDiary" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
     <style name="Theme.KirayaDiary.Starting" parent="Theme.KirayaDiary">

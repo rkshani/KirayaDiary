@@ -7,6 +7,12 @@
     <string name="nav_tenants">کرایہ دار</string>
     <string name="nav_reports">رپورٹس</string>
     <string name="nav_settings">سیٹنگز</string>
+    <!-- Side drawer -->
+    <string name="drawer_open">مینو کھولیں</string>
+    <string name="drawer_rate_us">ریٹ کریں</string>
+    <string name="drawer_privacy_policy">پرائیویسی پالیسی</string>
+    <string name="drawer_exit">باہر نکلیں</string>
+    <string name="drawer_no_app">اسے کھولنے کے لیے کوئی ایپ نہیں ملی</string>
 
     <!-- Common actions -->
     <string name="action_back">واپس</string>

@@ -26,13 +26,15 @@ class WorkScheduler @Inject constructor(
             ExistingPeriodicWorkPolicy.KEEP,
             PeriodicWorkRequestBuilder<RentWorker>(1, TimeUnit.DAYS).build(),
         )
-        workManager.enqueueUniquePeriodicWork(
-            ReminderWorker.NAME,
-            ExistingPeriodicWorkPolicy.KEEP,
-            PeriodicWorkRequestBuilder<ReminderWorker>(1, TimeUnit.DAYS)
-                .setInitialDelay(millisUntil(REMINDER_HOUR), TimeUnit.MILLISECONDS)
-                .build(),
-        )
+        // Reminder notifications are hidden for now. Turn back on in a later update.
+        // workManager.enqueueUniquePeriodicWork(
+        //     ReminderWorker.NAME,
+        //     ExistingPeriodicWorkPolicy.KEEP,
+        //     PeriodicWorkRequestBuilder<ReminderWorker>(1, TimeUnit.DAYS)
+        //         .setInitialDelay(millisUntil(REMINDER_HOUR), TimeUnit.MILLISECONDS)
+        //         .build(),
+        // )
+        workManager.cancelUniqueWork(ReminderWorker.NAME)
     }
 
     /** Runs rent generation now (for example after adding a tenant). */

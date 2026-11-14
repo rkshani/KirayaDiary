@@ -20,6 +20,7 @@ import com.kiraya.diary.ui.components.KirayaTopBar
 fun SettingsScreen(
     onReminders: () -> Unit,
     onBackup: () -> Unit,
+    onAppLock: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Scaffold(
@@ -28,6 +29,7 @@ fun SettingsScreen(
     ) { padding ->
         Column(Modifier.padding(padding)) {
             SettingsRow(R.string.reminders_title, R.drawable.ic_notification, onReminders)
+            SettingsRow(R.string.lock_title, R.drawable.ic_lock, onAppLock)
             SettingsRow(R.string.backup_title, R.drawable.ic_backup, onBackup)
         }
     }

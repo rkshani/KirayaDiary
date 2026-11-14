@@ -16,6 +16,7 @@ import com.kiraya.diary.ui.expenses.ExpensesScreen
 import com.kiraya.diary.ui.home.HomeScreen
 import com.kiraya.diary.ui.home.QuickAction
 import com.kiraya.diary.ui.lease.LeaseEditScreen
+import com.kiraya.diary.ui.lock.AppLockSettingsScreen
 import com.kiraya.diary.ui.moveout.MoveOutScreen
 import com.kiraya.diary.ui.payments.PaymentEditScreen
 import com.kiraya.diary.ui.properties.PropertiesScreen
@@ -88,8 +89,10 @@ fun KirayaNavHost(
             SettingsScreen(
                 onReminders = { navController.navigate(Routes.REMINDERS) },
                 onBackup = { navController.navigate(Routes.BACKUP) },
+                onAppLock = { navController.navigate(Routes.APP_LOCK) },
             )
         }
+        composable(Routes.APP_LOCK) { AppLockSettingsScreen(onBack = back) }
         composable(Routes.BACKUP) { BackupScreen(onBack = back) }
 
         // Properties and units

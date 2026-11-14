@@ -341,4 +341,27 @@
     <string name="backup_failed">کچھ غلط ہو گیا۔ دوبارہ کوشش کریں۔</string>
     <string name="backup_invalid">یہ کرایہ ڈائری کی بیک اپ فائل نہیں ہے۔</string>
     <string name="backup_restore_message">موجودہ تمام ڈیٹا کو %1$s کے بیک اپ سے بدل دیں؟ ایپ دوبارہ شروع ہوگی۔</string>
+
+    <!-- App lock -->
+    <string name="lock_title">ایپ لاک اور رازداری</string>
+    <string name="lock_pin_title">پن لاک</string>
+    <string name="lock_is_on">ایپ کھلنے پر آپ کا پن مانگتی ہے۔</string>
+    <string name="lock_is_off">آپ کا فون رکھنے والا کوئی بھی ایپ کھول سکتا ہے۔ لاک کے لیے پن لگائیں۔</string>
+    <string name="lock_set_pin">پن لگائیں</string>
+    <string name="lock_change_pin">پن تبدیل کریں</string>
+    <string name="lock_new_pin">نیا پن لکھیں (4 سے 6 ہندسے)</string>
+    <string name="lock_confirm_pin">پن دوبارہ لکھیں</string>
+    <string name="lock_pin_mismatch">پن ایک جیسے نہیں تھے۔ دوبارہ کوشش کریں۔</string>
+    <string name="lock_turn_off">لاک بند کریں</string>
+    <string name="lock_turn_off_message">پن اور فنگر پرنٹ لاک ہٹا دیں؟</string>
+    <string name="lock_biometric">فنگر پرنٹ سے کھولیں</string>
+    <string name="lock_biometric_hint">پن لکھنے کی بجائے فنگر پرنٹ یا چہرہ استعمال کریں</string>
+    <string name="lock_biometric_title">کرایہ ڈائری کھولیں</string>
+    <string name="lock_use_pin">پن استعمال کریں</string>
+    <string name="lock_use_biometric">فنگر پرنٹ استعمال کریں</string>
+    <string name="lock_enter_pin">اپنا پن لکھیں</string>
+    <string name="lock_wrong_pin">غلط پن</string>
+    <string name="lock_hide_amounts">رقم چھپائیں</string>
+    <string name="lock_show_amounts">رقم دکھائیں</string>
+    <string name="lock_hide_amounts_hint">اسکرین پر رقم کی جگہ •••• دکھائیں۔ رسید اور رپورٹ میں اصل رقم ہی رہے گی۔</string>
 </resources>

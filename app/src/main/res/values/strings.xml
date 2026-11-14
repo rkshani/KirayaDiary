@@ -341,4 +341,27 @@
     <string name="backup_failed">Something went wrong. Please try again.</string>
     <string name="backup_invalid">This is not a Kiraya Diary backup file.</string>
     <string name="backup_restore_message">Replace ALL current data with the backup from %1$s? The app will restart.</string>
+
+    <!-- App lock -->
+    <string name="lock_title">App lock and privacy</string>
+    <string name="lock_pin_title">PIN lock</string>
+    <string name="lock_is_on">The app asks for your PIN when it opens.</string>
+    <string name="lock_is_off">Anyone with your phone can open the app. Set a PIN to lock it.</string>
+    <string name="lock_set_pin">Set PIN</string>
+    <string name="lock_change_pin">Change PIN</string>
+    <string name="lock_new_pin">Enter a new PIN (4 to 6 digits)</string>
+    <string name="lock_confirm_pin">Enter the PIN again</string>
+    <string name="lock_pin_mismatch">PINs did not match. Try again.</string>
+    <string name="lock_turn_off">Turn off lock</string>
+    <string name="lock_turn_off_message">Remove the PIN and fingerprint lock?</string>
+    <string name="lock_biometric">Unlock with fingerprint</string>
+    <string name="lock_biometric_hint">Use fingerprint or face instead of typing the PIN</string>
+    <string name="lock_biometric_title">Unlock Kiraya Diary</string>
+    <string name="lock_use_pin">Use PIN</string>
+    <string name="lock_use_biometric">Use fingerprint</string>
+    <string name="lock_enter_pin">Enter your PIN</string>
+    <string name="lock_wrong_pin">Wrong PIN</string>
+    <string name="lock_hide_amounts">Hide amounts</string>
+    <string name="lock_show_amounts">Show amounts</string>
+    <string name="lock_hide_amounts_hint">Show •••• instead of money on screen. Receipts and reports still show real amounts.</string>
 </resources>

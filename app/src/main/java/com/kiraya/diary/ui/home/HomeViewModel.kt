@@ -3,6 +3,7 @@ package com.kiraya.diary.ui.home
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kiraya.diary.core.date.DateUtils
+import com.kiraya.diary.data.settings.SettingsRepository
 import com.kiraya.diary.domain.ledger.TenantLedger
 import com.kiraya.diary.domain.model.TenantWithUnit
 import com.kiraya.diary.domain.repository.PropertyRepository
@@ -13,7 +14,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 data class OverdueTenant(
@@ -41,7 +44,15 @@ class HomeViewModel @Inject constructor(
     rentRepository: RentRepository,
     propertyRepository: PropertyRepository,
     observeLedgers: ObserveLedgersUseCase,
+    private val settingsRepository: SettingsRepository,
 ) : ViewModel() {
+    val amountsHidden: StateFlow<Boolean> = settingsRepository.settings.map { it.hideAmounts }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
+    fun toggleAmounts() {
+        viewModelScope.launch { settingsRepository.setHideAmounts(!amountsHidden.value) }
+    }
+
     private val month = DateUtils.currentMonthKey()
 
     val state: StateFlow<HomeUiState> = combine(

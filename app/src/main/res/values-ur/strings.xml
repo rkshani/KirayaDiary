@@ -393,4 +393,8 @@
     <string name="onboarding_skip">چھوڑیں</string>
     <string name="onboarding_next">آگے</string>
     <string name="onboarding_start">شروع کریں</string>
+
+    <!-- Polish -->
+    <string name="home_empty_title">آئیے شروع کریں</string>
+    <string name="home_empty_message">1۔ اپنی جائیداد اور اس کے یونٹس شامل کریں۔ 2۔ کرایہ داروں کو ان کے کرائے کے ساتھ شامل کریں۔ پھر کرایہ ہر مہینے خود شامل ہوگا۔</string>
 </resources>

@@ -25,6 +25,8 @@ class MainActivity : FragmentActivity() {
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Leave the splash theme as soon as the app is ready to draw.
+        setTheme(R.style.Theme_KirayaDiary)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {

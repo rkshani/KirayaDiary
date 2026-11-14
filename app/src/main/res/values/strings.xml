@@ -179,4 +179,23 @@
     <string name="charge_bill">Bill</string>
     <string name="charge_paid_of">Paid %1$s of %2$s</string>
     <string name="charge_due_on">Due %1$s</string>
+
+    <!-- Payments -->
+    <string name="payment_add">Record payment</string>
+    <string name="payment_edit">Edit payment</string>
+    <string name="payment_delete">Delete payment</string>
+    <string name="payment_delete_message">Delete this payment? The tenant\'s balance will go up again.</string>
+    <string name="payment_tenant">Tenant</string>
+    <string name="payment_pick_tenant">Pick a tenant</string>
+    <string name="payment_owes">Owes %1$s</string>
+    <string name="payment_pending_now">Pending now: %1$s</string>
+    <string name="payment_full">Full amount</string>
+    <string name="payment_amount">Amount received</string>
+    <string name="payment_partial_hint">You can enter less for a partial payment</string>
+    <string name="payment_date">Payment date</string>
+    <string name="payment_method">Paid by</string>
+    <string name="payment_note">Note</string>
+    <string name="payment_note_hint">For example a bank or JazzCash transaction ID</string>
+    <string name="payments_title">Payment history</string>
+    <string name="payments_empty">No payments yet.</string>
 </resources>

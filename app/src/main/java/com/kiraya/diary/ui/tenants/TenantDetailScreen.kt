@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
+import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -37,6 +38,7 @@ import com.kiraya.diary.core.date.DateUtils
 import com.kiraya.diary.domain.model.TenantWithUnit
 import com.kiraya.diary.ui.components.ConfirmDialog
 import com.kiraya.diary.ui.lease.LeaseCard
+import com.kiraya.diary.ui.payments.PaymentsSection
 import com.kiraya.diary.ui.rent.ChargesSection
 import com.kiraya.diary.ui.components.KirayaTopBar
 import com.kiraya.diary.ui.components.LocalMoneyDisplay
@@ -53,6 +55,8 @@ data class TenantDetailActions(
     val onEditLease: (Long) -> Unit,
     val onEditRentEntry: (Long) -> Unit,
     val onOpenBill: (Long) -> Unit,
+    val onRecordPayment: (Long) -> Unit,
+    val onEditPayment: (Long) -> Unit,
 )
 
 @Composable
@@ -130,7 +134,7 @@ private fun LazyListScope.tenantSections(
     tenant: TenantWithUnit,
     actions: TenantDetailActions,
 ) {
-    item { BalanceCard(state) }
+    item { BalanceCard(state, onRecordPayment = { actions.onRecordPayment(tenant.tenant.id) }) }
     item { InfoCard(tenant) }
     item {
         ChargesSection(
@@ -139,6 +143,7 @@ private fun LazyListScope.tenantSections(
             onBillClick = actions.onOpenBill,
         )
     }
+    item { PaymentsSection(state.ledger.payments, onPaymentClick = actions.onEditPayment) }
     if (tenant.tenant.isActive || state.lease != null) {
         item { LeaseCard(state.lease, onEdit = { actions.onEditLease(tenant.tenant.id) }) }
     }
@@ -155,7 +160,7 @@ private fun LazyListScope.tenantSections(
 }
 
 @Composable
-private fun BalanceCard(state: TenantDetailState) {
+private fun BalanceCard(state: TenantDetailState, onRecordPayment: () -> Unit) {
     val ledger = state.ledger
     val tenant = state.tenant?.tenant ?: return
     ElevatedCard(
@@ -194,6 +199,10 @@ private fun BalanceCard(state: TenantDetailState) {
                     Text(stringResource(R.string.tenant_total_paid), style = MaterialTheme.typography.bodySmall)
                     MoneyText(ledger.totalPaid, style = MaterialTheme.typography.titleSmall)
                 }
+            }
+            Button(onClick = onRecordPayment, modifier = Modifier.fillMaxWidth().padding(top = 16.dp)) {
+                Icon(painterResource(R.drawable.ic_payment), contentDescription = null)
+                Text(stringResource(R.string.payment_add), Modifier.padding(start = 8.dp))
             }
         }
     }

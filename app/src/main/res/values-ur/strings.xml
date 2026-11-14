@@ -330,4 +330,15 @@
     <string name="move_out_still_owed_hint">ایڈوانس کے بعد بھی کرایہ دار کے ذمے رقم باقی ہے۔ آپ بعد میں ان کے صفحے سے ادائیگی درج کر سکتے ہیں۔</string>
     <string name="move_out_confirm">خالی کرنا پکا کریں</string>
     <string name="move_out_confirm_message">%1$s کو فارغ کریں؟ ان کا یونٹ خالی ہو جائے گا اور مزید کرایہ نہیں لگے گا۔ ریکارڈ محفوظ رہے گا۔</string>
+
+    <!-- Backup -->
+    <string name="backup_title">بیک اپ اور بحالی</string>
+    <string name="backup_info">تمام ڈیٹا (کرایہ دار، کرایہ، ادائیگیاں، بل، اخراجات، تصاویر اور سیٹنگز) ایک فائل میں فون، ایس ڈی کارڈ یا یو ایس بی پر محفوظ کریں۔ انٹرنیٹ استعمال نہیں ہوتا۔ فائل سنبھال کر رکھیں۔</string>
+    <string name="backup_create">بیک اپ فائل بنائیں</string>
+    <string name="backup_restore">بیک اپ سے بحال کریں</string>
+    <string name="backup_working">براہ کرم انتظار کریں…</string>
+    <string name="backup_done">بیک اپ محفوظ ہو گیا۔</string>
+    <string name="backup_failed">کچھ غلط ہو گیا۔ دوبارہ کوشش کریں۔</string>
+    <string name="backup_invalid">یہ کرایہ ڈائری کی بیک اپ فائل نہیں ہے۔</string>
+    <string name="backup_restore_message">موجودہ تمام ڈیٹا کو %1$s کے بیک اپ سے بدل دیں؟ ایپ دوبارہ شروع ہوگی۔</string>
 </resources>

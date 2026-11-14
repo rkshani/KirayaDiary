@@ -10,6 +10,7 @@ import androidx.navigation.navArgument
 import com.kiraya.diary.R
 import com.kiraya.diary.ui.home.HomeScreen
 import com.kiraya.diary.ui.home.QuickAction
+import com.kiraya.diary.ui.lease.LeaseEditScreen
 import com.kiraya.diary.ui.properties.PropertiesScreen
 import com.kiraya.diary.ui.properties.PropertyDetailScreen
 import com.kiraya.diary.ui.properties.PropertyEditScreen
@@ -92,8 +93,12 @@ fun KirayaNavHost(
                 actions = TenantDetailActions(
                     onBack = back,
                     onEdit = { navController.navigate(Routes.tenantEdit(it)) },
+                    onEditLease = { navController.navigate(Routes.leaseEdit(it)) },
                 ),
             )
+        }
+        composable(Routes.LEASE_EDIT, listOf(longArg(Routes.ARG_TENANT_ID))) {
+            LeaseEditScreen(onDone = back)
         }
         composable(
             Routes.TENANT_EDIT,

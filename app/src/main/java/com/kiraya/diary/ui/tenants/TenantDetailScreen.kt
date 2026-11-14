@@ -36,6 +36,7 @@ import com.kiraya.diary.R
 import com.kiraya.diary.core.date.DateUtils
 import com.kiraya.diary.domain.model.TenantWithUnit
 import com.kiraya.diary.ui.components.ConfirmDialog
+import com.kiraya.diary.ui.lease.LeaseCard
 import com.kiraya.diary.ui.components.KirayaTopBar
 import com.kiraya.diary.ui.components.LocalMoneyDisplay
 import com.kiraya.diary.ui.components.MoneyText
@@ -48,6 +49,7 @@ import com.kiraya.diary.ui.util.Intents
 data class TenantDetailActions(
     val onBack: () -> Unit,
     val onEdit: (Long) -> Unit,
+    val onEditLease: (Long) -> Unit,
 )
 
 @Composable
@@ -105,7 +107,7 @@ fun TenantDetailScreen(
             ),
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            tenantSections(state, tenant)
+            tenantSections(state, tenant, actions)
         }
     }
 
@@ -120,9 +122,16 @@ fun TenantDetailScreen(
     }
 }
 
-private fun LazyListScope.tenantSections(state: TenantDetailState, tenant: TenantWithUnit) {
+private fun LazyListScope.tenantSections(
+    state: TenantDetailState,
+    tenant: TenantWithUnit,
+    actions: TenantDetailActions,
+) {
     item { BalanceCard(state) }
     item { InfoCard(tenant) }
+    if (tenant.tenant.isActive || state.lease != null) {
+        item { LeaseCard(state.lease, onEdit = { actions.onEditLease(tenant.tenant.id) }) }
+    }
     tenant.tenant.cnicPhoto?.let { photo ->
         item { PhotoThumb(photo, stringResource(R.string.tenant_cnic_photo)) }
     }

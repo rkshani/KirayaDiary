@@ -134,4 +134,27 @@
     <string name="tenant_total_charged">Total charged</string>
     <string name="tenant_total_paid">Total paid</string>
     <string name="tenant_moved_out_on">Moved out on %1$s</string>
+
+    <!-- Lease -->
+    <string name="lease_title">Lease agreement</string>
+    <string name="lease_none">No lease added. Add dates, a yearly increase and the agreement photo.</string>
+    <string name="lease_add">Add lease</string>
+    <string name="lease_edit">Edit lease</string>
+    <string name="lease_delete">Delete lease</string>
+    <string name="lease_delete_message">Delete this lease and its agreement photo? Rent records stay.</string>
+    <string name="lease_start">Lease start</string>
+    <string name="lease_end">Lease end</string>
+    <string name="lease_no_end">No end date</string>
+    <string name="lease_clear_end">Clear end date</string>
+    <string name="lease_end_error">End date must be after the start date</string>
+    <string name="lease_years">%1$d year</string>
+    <string name="lease_base_rent">Rent at start</string>
+    <string name="lease_base_rent_hint">Yearly increases are added on top of this</string>
+    <string name="lease_increase">Yearly rent increase</string>
+    <string name="lease_increase_hint">For example 10. Leave empty for no increase.</string>
+    <string name="lease_agreement_photo">Agreement photo</string>
+    <string name="lease_current_rent">Current rent</string>
+    <string name="lease_next_increase">Next increase</string>
+    <string name="lease_ended">Lease ended</string>
+    <string name="lease_ends_in">Ends in %1$d days</string>
 </resources>

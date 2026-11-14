@@ -46,6 +46,9 @@ object Routes {
     const val RENT_ENTRY_EDIT = "rent_entry_edit/{$ARG_ENTRY_ID}"
     const val PAYMENT_EDIT = "payment_edit?$ARG_TENANT_ID={$ARG_TENANT_ID}&$ARG_PAYMENT_ID={$ARG_PAYMENT_ID}"
 
+    const val RECEIPT = "receipt/{$ARG_PAYMENT_ID}"
+
+    fun receipt(paymentId: Long) = "receipt/$paymentId"
     fun rentEntryEdit(entryId: Long) = "rent_entry_edit/$entryId"
     fun paymentEdit(tenantId: Long = 0, paymentId: Long = 0) =
         "payment_edit?$ARG_TENANT_ID=$tenantId&$ARG_PAYMENT_ID=$paymentId"

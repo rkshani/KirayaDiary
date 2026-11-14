@@ -57,6 +57,7 @@ data class TenantDetailActions(
     val onOpenBill: (Long) -> Unit,
     val onRecordPayment: (Long) -> Unit,
     val onEditPayment: (Long) -> Unit,
+    val onReceipt: (Long) -> Unit,
 )
 
 @Composable
@@ -143,7 +144,13 @@ private fun LazyListScope.tenantSections(
             onBillClick = actions.onOpenBill,
         )
     }
-    item { PaymentsSection(state.ledger.payments, onPaymentClick = actions.onEditPayment) }
+    item {
+        PaymentsSection(
+            payments = state.ledger.payments,
+            onPaymentClick = actions.onEditPayment,
+            onReceiptClick = actions.onReceipt,
+        )
+    }
     if (tenant.tenant.isActive || state.lease != null) {
         item { LeaseCard(state.lease, onEdit = { actions.onEditLease(tenant.tenant.id) }) }
     }

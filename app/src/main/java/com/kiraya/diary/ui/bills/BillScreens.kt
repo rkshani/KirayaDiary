@@ -239,7 +239,7 @@ fun BillEditScreen(
             }
         }
         if (form.splitMode == SplitMode.CUSTOM) {
-            val sum = shares?.sum() ?: form.visibleRows.filter { it.selected }.sumOf { Money.parse(it.amount.ifBlank { "0" }) ?: 0 }
+            val sum = shares?.sum() ?: form.visibleRows.filter { it.selected }.sumOf { Money.parse(it.amount.ifBlank { "0" }) ?: 0L }
             Text(
                 stringResource(R.string.bill_custom_total, money.formatPlain(sum)),
                 style = MaterialTheme.typography.titleSmall,

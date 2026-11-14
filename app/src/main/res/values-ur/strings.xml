@@ -221,4 +221,20 @@
     <string name="bill_custom_total">کل: %1$s</string>
     <string name="bill_shares_error">کم از کم ایک کرایہ دار چنیں اور درست رقم لکھیں۔</string>
     <string name="bill_split_between">%1$d میں تقسیم</string>
+
+    <!-- Receipts -->
+    <string name="receipt_title">رسید</string>
+    <string name="receipt_heading">کرایہ کی رسید</string>
+    <string name="receipt_number">رسید نمبر</string>
+    <string name="receipt_date">تاریخ</string>
+    <string name="receipt_received_from">وصول کیا از</string>
+    <string name="receipt_amount">وصول شدہ رقم</string>
+    <string name="receipt_balance">اس ادائیگی کے بعد باقی</string>
+    <string name="receipt_advance">%1$s پیشگی ادا</string>
+    <string name="receipt_clear">تمام واجبات ادا</string>
+    <string name="receipt_signature">دستخط</string>
+    <string name="receipt_footer">کرایہ ڈائری سے بنائی گئی</string>
+    <string name="receipt_whatsapp">واٹس ایپ</string>
+    <string name="receipt_share_title">رسید بھیجیں</string>
+    <string name="receipt_failed">رسید نہیں بن سکی۔</string>
 </resources>

@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
@@ -20,6 +22,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
@@ -137,6 +140,7 @@ fun PaymentEditScreen(
 fun PaymentsSection(
     payments: List<Payment>,
     onPaymentClick: (Long) -> Unit,
+    onReceiptClick: (Long) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     var showAll by rememberSaveable { mutableStateOf(false) }
@@ -175,6 +179,9 @@ fun PaymentsSection(
                         )
                     }
                     MoneyText(p.amount, style = MaterialTheme.typography.titleSmall)
+                    IconButton(onClick = { onReceiptClick(p.id) }) {
+                        Icon(painterResource(R.drawable.ic_receipt), stringResource(R.string.receipt_title))
+                    }
                 }
             }
             if (payments.size > COLLAPSED) {

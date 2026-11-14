@@ -34,4 +34,64 @@
     <string name="home_overdue_title">تاخیر والے کرایہ دار</string>
     <string name="home_no_overdue">کوئی کرایہ لیٹ نہیں۔ سب ٹھیک ہے!</string>
     <string name="home_days_overdue">%1$d دن سے لیٹ</string>
+
+    <!-- Common fields -->
+    <string name="field_notes">نوٹس</string>
+    <string name="error_required">یہ خانہ ضروری ہے</string>
+    <string name="error_amount">درست رقم لکھیں</string>
+
+    <!-- Enum labels -->
+    <string name="unit_type_flat">فلیٹ</string>
+    <string name="unit_type_shop">دکان</string>
+    <string name="unit_type_room">کمرہ</string>
+    <string name="unit_type_house">مکان</string>
+    <string name="unit_type_office">دفتر</string>
+    <string name="unit_type_other">دیگر</string>
+    <string name="method_cash">نقد</string>
+    <string name="method_bank">بینک</string>
+    <string name="method_jazzcash">جاز کیش</string>
+    <string name="method_easypaisa">ایزی پیسہ</string>
+    <string name="method_deposit">ایڈوانس سے</string>
+    <string name="method_other">دیگر</string>
+    <string name="bill_type_electricity">بجلی</string>
+    <string name="bill_type_gas">گیس</string>
+    <string name="bill_type_water">پانی</string>
+    <string name="bill_type_other">دیگر</string>
+    <string name="split_equal">برابر تقسیم</string>
+    <string name="split_custom">اپنی مرضی کی رقم</string>
+    <string name="expense_repair">مرمت</string>
+    <string name="expense_maintenance">دیکھ بھال</string>
+    <string name="expense_tax">ٹیکس</string>
+    <string name="expense_utility">یوٹیلیٹی</string>
+    <string name="expense_other">دیگر</string>
+    <string name="status_paid">ادا شدہ</string>
+    <string name="status_partial">جزوی</string>
+    <string name="status_unpaid">غیر ادا شدہ</string>
+
+    <!-- Properties -->
+    <string name="quick_properties">جائیدادیں</string>
+    <string name="properties_title">جائیدادیں</string>
+    <string name="properties_empty_title">ابھی کوئی جائیداد نہیں</string>
+    <string name="properties_empty_message">اپنی بلڈنگ، مکان یا مارکیٹ شامل کریں۔ پھر اس کے فلیٹ، دکانیں یا کمرے شامل کریں۔</string>
+    <string name="property_add">جائیداد شامل کریں</string>
+    <string name="property_edit">جائیداد میں ترمیم</string>
+    <string name="property_delete">جائیداد حذف کریں</string>
+    <string name="property_delete_message">اس سے جائیداد، اس کے تمام یونٹس، بل اور اخراجات حذف ہو جائیں گے۔ کرایہ دار رہیں گے لیکن ان کا یونٹ ہٹ جائے گا۔ یہ واپس نہیں ہو سکتا۔</string>
+    <string name="property_name">جائیداد کا نام</string>
+    <string name="property_address">پتہ</string>
+    <string name="units_count">%1$d یونٹس</string>
+    <string name="vacant_count">%1$d خالی</string>
+    <string name="units_summary">یونٹس: %1$d (%2$d بھرے، %3$d خالی)</string>
+    <string name="units_empty">ابھی کوئی یونٹ نہیں۔ فلیٹ، دکان یا کمرہ شامل کرنے کے لیے یونٹ شامل کریں دبائیں۔</string>
+    <string name="unit_add">یونٹ شامل کریں</string>
+    <string name="unit_edit">یونٹ میں ترمیم</string>
+    <string name="unit_delete">یونٹ حذف کریں</string>
+    <string name="unit_delete_message">یہ یونٹ حذف کریں؟ یہ واپس نہیں ہو سکتا۔</string>
+    <string name="unit_delete_occupied_message">یہاں %1$s رہتے ہیں۔ کرایہ دار رہے گا لیکن اس کا کوئی یونٹ نہیں ہوگا۔ پھر بھی حذف کریں؟</string>
+    <string name="unit_name">یونٹ کا نام یا نمبر</string>
+    <string name="unit_name_hint">مثال: فلیٹ 2B، دکان 5، کمرہ 1</string>
+    <string name="unit_type">قسم</string>
+    <string name="unit_default_rent">ماہانہ کرایہ (اختیاری)</string>
+    <string name="unit_occupied">بھرا ہوا</string>
+    <string name="unit_vacant">خالی</string>
 </resources>

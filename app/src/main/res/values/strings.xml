@@ -393,4 +393,8 @@
     <string name="onboarding_skip">Skip</string>
     <string name="onboarding_next">Next</string>
     <string name="onboarding_start">Get started</string>
+
+    <!-- Polish -->
+    <string name="home_empty_title">Let\'s get started</string>
+    <string name="home_empty_message">1. Add your property and its units. 2. Add tenants with their rent. Rent is then added every month by itself.</string>
 </resources>

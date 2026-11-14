@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.KirayaDiary" parent="android:Theme.Material.NoActionBar" />
+    <style name="Theme.KirayaDiary" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#FF0E1514</item>
+    </style>
+
+    <style name="Theme.KirayaDiary.Starting" parent="Theme.KirayaDiary">
+        <item name="android:windowBackground">@drawable/splash_window</item>
+    </style>
 </resources>

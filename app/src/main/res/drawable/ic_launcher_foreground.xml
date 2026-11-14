@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Launcher icon art: a house with a diary page and a check mark. Content stays in the 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Roof -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,27 L82,50 L76,50 L76,52 L32,52 L32,50 L26,50 Z" />
+    <!-- Walls -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,50 L74,50 L74,80 L34,80 Z" />
+    <!-- Diary page on the wall -->
+    <path
+        android:fillColor="#006A60"
+        android:pathData="M42,56 L66,56 L66,74 L42,74 Z" />
+    <path
+        android:fillColor="#FFB95C"
+        android:pathData="M46,66 L50,62 L53,65 L61,57 L64,60 L53,71 Z" />
+</vector>

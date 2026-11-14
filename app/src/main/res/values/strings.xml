@@ -198,4 +198,27 @@
     <string name="payment_note_hint">For example a bank or JazzCash transaction ID</string>
     <string name="payments_title">Payment history</string>
     <string name="payments_empty">No payments yet.</string>
+
+    <!-- Bills -->
+    <string name="quick_bills">Bills</string>
+    <string name="bills_title">Bills</string>
+    <string name="bills_empty_title">No bills yet</string>
+    <string name="bills_empty_message">Add a bijli, gas or water bill and split it between tenants. Their share is added to what they owe.</string>
+    <string name="bill_add">Add bill</string>
+    <string name="bill_edit">Edit bill</string>
+    <string name="bill_delete">Delete bill</string>
+    <string name="bill_delete_message">Delete this bill? It will be removed from every tenant\'s dues.</string>
+    <string name="bill_type">Bill type</string>
+    <string name="bill_title_field">Title (optional)</string>
+    <string name="bill_title_hint">For example: Main meter, Ground floor</string>
+    <string name="bill_property">Property</string>
+    <string name="bill_all_properties">All properties</string>
+    <string name="bill_month">Bill month</string>
+    <string name="bill_split">How to split</string>
+    <string name="bill_total">Total bill amount</string>
+    <string name="bill_who_pays">Who pays</string>
+    <string name="bill_no_tenants">No active tenants to split with.</string>
+    <string name="bill_custom_total">Total: %1$s</string>
+    <string name="bill_shares_error">Pick at least one tenant and enter valid amounts.</string>
+    <string name="bill_split_between">Split between %1$d</string>
 </resources>

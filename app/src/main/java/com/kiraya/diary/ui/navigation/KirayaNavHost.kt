@@ -11,6 +11,7 @@ import com.kiraya.diary.R
 import com.kiraya.diary.ui.home.HomeScreen
 import com.kiraya.diary.ui.home.QuickAction
 import com.kiraya.diary.ui.lease.LeaseEditScreen
+import com.kiraya.diary.ui.payments.PaymentEditScreen
 import com.kiraya.diary.ui.properties.PropertiesScreen
 import com.kiraya.diary.ui.properties.PropertyDetailScreen
 import com.kiraya.diary.ui.properties.PropertyEditScreen
@@ -44,6 +45,9 @@ fun KirayaNavHost(
             HomeScreen(
                 onTenantClick = { navController.navigate(Routes.tenantDetail(it)) },
                 quickActions = listOf(
+                    QuickAction(R.string.payment_add, R.drawable.ic_payment) {
+                        navController.navigate(Routes.paymentEdit())
+                    },
                     QuickAction(R.string.quick_monthly_rent, R.drawable.ic_calendar) {
                         navController.navigate(Routes.MONTHLY_RENT)
                     },
@@ -101,6 +105,8 @@ fun KirayaNavHost(
                     onEditLease = { navController.navigate(Routes.leaseEdit(it)) },
                     onEditRentEntry = { navController.navigate(Routes.rentEntryEdit(it)) },
                     onOpenBill = { },
+                    onRecordPayment = { navController.navigate(Routes.paymentEdit(tenantId = it)) },
+                    onEditPayment = { navController.navigate(Routes.paymentEdit(paymentId = it)) },
                 ),
             )
         }
@@ -112,6 +118,12 @@ fun KirayaNavHost(
         }
         composable(Routes.RENT_ENTRY_EDIT, listOf(longArg(Routes.ARG_ENTRY_ID))) {
             RentEntryEditScreen(onDone = back)
+        }
+        composable(
+            Routes.PAYMENT_EDIT,
+            listOf(longArg(Routes.ARG_TENANT_ID, 0L), longArg(Routes.ARG_PAYMENT_ID, 0L)),
+        ) {
+            PaymentEditScreen(onDone = { back() })
         }
         composable(Routes.LEASE_EDIT, listOf(longArg(Routes.ARG_TENANT_ID))) {
             LeaseEditScreen(onDone = back)

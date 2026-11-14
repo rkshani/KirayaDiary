@@ -179,4 +179,23 @@
     <string name="charge_bill">بل</string>
     <string name="charge_paid_of">%2$s میں سے %1$s ادا</string>
     <string name="charge_due_on">آخری تاریخ %1$s</string>
+
+    <!-- Payments -->
+    <string name="payment_add">ادائیگی درج کریں</string>
+    <string name="payment_edit">ادائیگی میں ترمیم</string>
+    <string name="payment_delete">ادائیگی حذف کریں</string>
+    <string name="payment_delete_message">یہ ادائیگی حذف کریں؟ کرایہ دار کی باقی رقم دوبارہ بڑھ جائے گی۔</string>
+    <string name="payment_tenant">کرایہ دار</string>
+    <string name="payment_pick_tenant">کرایہ دار چنیں</string>
+    <string name="payment_owes">باقی %1$s</string>
+    <string name="payment_pending_now">ابھی باقی: %1$s</string>
+    <string name="payment_full">پوری رقم</string>
+    <string name="payment_amount">وصول شدہ رقم</string>
+    <string name="payment_partial_hint">جزوی ادائیگی کے لیے کم رقم لکھ سکتے ہیں</string>
+    <string name="payment_date">ادائیگی کی تاریخ</string>
+    <string name="payment_method">ادائیگی کا طریقہ</string>
+    <string name="payment_note">نوٹ</string>
+    <string name="payment_note_hint">مثال: بینک یا جاز کیش ٹرانزیکشن آئی ڈی</string>
+    <string name="payments_title">ادائیگیوں کی تاریخ</string>
+    <string name="payments_empty">ابھی کوئی ادائیگی نہیں۔</string>
 </resources>

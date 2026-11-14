@@ -364,4 +364,33 @@
     <string name="lock_hide_amounts">رقم چھپائیں</string>
     <string name="lock_show_amounts">رقم دکھائیں</string>
     <string name="lock_hide_amounts_hint">اسکرین پر رقم کی جگہ •••• دکھائیں۔ رسید اور رپورٹ میں اصل رقم ہی رہے گی۔</string>
+
+    <!-- Settings -->
+    <string name="settings_profile">آپ کی تفصیل</string>
+    <string name="settings_landlord_name">آپ کا نام (مالک مکان)</string>
+    <string name="settings_landlord_hint">رسید اور یاد دہانی کے پیغام میں دکھایا جائے گا</string>
+    <string name="settings_appearance">زبان اور تھیم</string>
+    <string name="settings_language">زبان</string>
+    <string name="settings_language_system">فون کی زبان</string>
+    <string name="settings_theme">تھیم</string>
+    <string name="settings_theme_system">فون کے مطابق</string>
+    <string name="settings_theme_light">لائٹ</string>
+    <string name="settings_theme_dark">ڈارک</string>
+    <string name="settings_currency">کرنسی کا انداز</string>
+    <string name="settings_currency_symbol">کرنسی کا نشان</string>
+    <string name="settings_currency_custom">یا اپنا لکھیں</string>
+    <string name="settings_grouping">رقم میں کاما لگائیں</string>
+    <string name="settings_more">مزید</string>
+    <string name="settings_about">کرایہ ڈائری %1$s · مکمل آف لائن</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_1_title">کرایہ ڈائری میں خوش آمدید</string>
+    <string name="onboarding_1_body">اپنی تمام جائیدادیں، فلیٹ، دکانیں اور کرایہ دار ایک جگہ رکھیں۔ اپنی زبان چنیں۔</string>
+    <string name="onboarding_2_title">کرایہ، بل اور رسیدیں</string>
+    <string name="onboarding_2_body">کرایہ ہر مہینے خود شامل ہوتا ہے۔ ادائیگیاں درج کریں، بجلی اور گیس کے بل تقسیم کریں، اور واٹس ایپ پر رسید اور یاد دہانی بھیجیں۔</string>
+    <string name="onboarding_3_title">محفوظ اور آف لائن</string>
+    <string name="onboarding_3_body">آپ کا ڈیٹا آپ کے فون میں رہتا ہے۔ انٹرنیٹ کی ضرورت نہیں۔ ایپ کو پن سے لاک کریں اور بیک اپ فائل رکھیں۔</string>
+    <string name="onboarding_skip">چھوڑیں</string>
+    <string name="onboarding_next">آگے</string>
+    <string name="onboarding_start">شروع کریں</string>
 </resources>
